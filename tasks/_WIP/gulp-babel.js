@@ -5,14 +5,14 @@
  *				https://github.com/akhaku/babel-webpack-react-starter-pack/blob/master/gulpfile.js
  */
 
-import gulp from 'gulp'
-import babel from 'gulp-babel'
-import gutil from 'gulp-util'
-import del from 'del'
+const gulp = require('gulp')
+const babel = require('gulp-babel')
+const gutil = require('gulp-util')
+const del = require('del')
 
 const path = {
 	CLIENT: 'src/app/client/components/**/*.js'
-	DEST: 'dist/src/app/components/*.js'
+	DEST_COMPONENT: 'dist/src/app/components'
 }
 // TASK: bundle cleaner
 gulp.task('bundle-cleaner', (function)(cb) {
@@ -24,7 +24,7 @@ gulp.task('compile-babel', () => {
 	// components
 	return gulp.src(path.JS)
 		.pipe(babel())
-		.pipe(gulp.dest(path.DEST))
+		.pipe(gulp.dest(path.DEST_COMPONENT))
 })
 
 // DEFAULT
