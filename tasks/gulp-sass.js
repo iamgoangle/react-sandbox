@@ -7,10 +7,7 @@ const path = require('path')
 const root = require('app-root-path')
 const cssmin = require('gulp-cssmin')
 const rename = require('gulp-rename')
-
-const concat = function(a, b) {
-	return a + '' + b;
-}
+const del = require('del')
 
 const _path = {
 	HOME: root,
@@ -23,6 +20,13 @@ const sassOptions = {
 	errLogToConsole: true,
 	outputStyle: 'expanded'
 }
+
+// TASK: clean css in dest
+gulp.task('clean-css', function () {
+	del([_path.DEST_CSS]).then(paths => {
+	    console.log('\n Files and folders that would be deleted:\n ->', paths.join('\n -> '));
+	})
+})
 
 // TASK: minify-css
 // gulp.task('minify-css', function() {
@@ -48,7 +52,7 @@ gulp.task('build-sass', function () {
 })
 
 // WATCH
-gulp.task('watch-sass', ['build-sass'], function() {
-	gulp.watch(_path.SOURCE, ['build-sass']);
+gulp.task('watch-sass', ['clean-css', 'build-sass'], function() {
+	gulp.watch(_path.SOURCE, ['clean-css', 'build-sass']);
 	// gulp.watch(_path.DEST_CSS, ['minify-css']);
-});
+})
