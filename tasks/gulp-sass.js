@@ -1,21 +1,22 @@
 const gulp = require('gulp')
 const sass = require('gulp-sass')
+const del = require('del')
 const sourcemaps = require('gulp-sourcemaps')
 const autoprefixer = require('gulp-autoprefixer')
-const minifyCss = require('gulp-minify-css')
 const path = require('path')
 const root = require('app-root-path')
 const cssmin = require('gulp-cssmin')
 const rename = require('gulp-rename')
-const del = require('del')
 
+// defines _path global variable
 const _path = {
 	HOME: root,
 	SOURCE: path.resolve(__dirname, root.toString(), './src/app/sass/styles.scss'),
 	DEST: path.resolve(__dirname, root.toString(), './dist/src/app/css/'),
-	DEST_CSS: path.resolve(__dirname, root.toString(), './dist/src/app/css/*.css')
+	DEST_CSS: path.resolve(__dirname, root.toString(), './dist/src/app/css/*')
 }
 
+// sass option
 const sassOptions = {
 	errLogToConsole: true,
 	outputStyle: 'expanded'
@@ -23,8 +24,8 @@ const sassOptions = {
 
 // TASK: clean css in dest
 gulp.task('clean-css', function () {
-	del([_path.DEST_CSS]).then(paths => {
-	    console.log('\n Files and folders that would be deleted:\n ->', paths.join('\n -> '));
+	return del([_path.DEST_CSS]).then(paths => {
+		console.log('Files and folders that would be deleted:\n', paths.join('\n'))
 	})
 })
 
@@ -52,7 +53,6 @@ gulp.task('build-sass', function () {
 })
 
 // WATCH
-gulp.task('watch-sass', ['clean-css', 'build-sass'], function() {
-	gulp.watch(_path.SOURCE, ['clean-css', 'build-sass']);
-	// gulp.watch(_path.DEST_CSS, ['minify-css']);
+gulp.task('watch-sass', ['build-sass'], function() {
+	gulp.watch(_path.SOURCE, ['build-sass'])
 })
