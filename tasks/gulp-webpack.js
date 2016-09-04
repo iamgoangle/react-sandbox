@@ -8,10 +8,10 @@
 
 const gulp = require('gulp')
 const gutil = require('gulp-util')
-const del = require('del')
 
 const webpack = require('webpack')
-const webpackConfig = require('webpack-dev-server')
+const WebpackDevServer = require("webpack-dev-server")
+const webpackConfig = require("./config/webpack.config.js")
 
 const root = require('app-root-path')
 const path = require('path')
@@ -19,7 +19,7 @@ const path = require('path')
 // defines _path global variable
 const _path = {
 	HOME: root,
-	SOURCE: path.resolve(__dirname, root.toString(), './src/app/component/**/*.js')
+	SOURCE: path.resolve(__dirname, root.toString(), './src/app/components/**/*.js')
 }
 
 // ========================================================================== //
@@ -53,14 +53,6 @@ const _path = {
 // Production build
 // gulp.task("build-prod", ["webpack:build"])
 
-// TASK: clean bundle
-gulp.task('clean-css', function () {
-	del([_path.DEST_CSS]).then(paths => {
-		console.log('\n Files and folders that would be deleted:\n ->',
-			paths.join('\n -> '))
-	})
-})
-
 // modify some webpack config options
 const myDevConfig = Object.create(webpackConfig)
 myDevConfig.devtool = "sourcemap"
@@ -86,12 +78,15 @@ gulp.task("webpack-dev-server", function(callback) {
 	myConfig.devtool = "eval"
 	myConfig.debug = true
 
+	console.log(myConfig);
+
 	// Start a webpack-dev-server
 	new WebpackDevServer(webpack(myConfig), {
-		publicPath: "/" + myConfig.output.publicPath,
+		// publicPath: "/" + myConfig.output.publicPath,
 		stats: {
 			colors: true
-		}
+		},
+		hot: true
 	}).listen(8080, "localhost", function(err) {
 		if(err) throw new gutil.PluginError("webpack-dev-server", err)
 		gutil.log("[webpack-dev-server]", "http://localhost:8080/webpack-dev-server/index.html")
@@ -99,8 +94,11 @@ gulp.task("webpack-dev-server", function(callback) {
 })
 
 // The development server (the recommended option for development)
-// gulp.task("default", ["webpack-dev-server"])
-
-gulp.task("watch-build-dev", ["webpack:build-dev"], function() {
-	gulp.watch([_path.SOURCE], ["webpack:build-dev"])
+gulp.task("default", ["webpack-dev-server"])
+gulp.task("watch-build-dev", ["webpack-dev-server"], function() {
+	gulp.watch(['../src/app/components/**/*.js'], ["webpack-dev-server"])
 })
+
+// gulp.task("watch-build-dev", ["webpack:build-dev"], function() {
+// 	gulp.watch(['../src/app/components/**/*.js'], ["webpack:build-dev"])
+// })
