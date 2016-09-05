@@ -10,6 +10,7 @@ import React, { Component } from 'react'
 import { render } from 'react-dom'
 
 import Header from './Header'
+import Footer from './Footer'
 
 class MainApp extends Component {
     constructor () {
@@ -27,6 +28,7 @@ class MainApp extends Component {
             <div>
                 <Header />
                 {this.props.children}
+                <Footer />
             </div>
         )
     }
