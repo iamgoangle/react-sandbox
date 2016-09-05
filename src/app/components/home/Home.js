@@ -21,7 +21,7 @@ class Home extends Component {
 			<div className="clear">
 				<Banner />
 				<AboutUs />
-			</div>	
+			</div>
 		)
 	}
 }

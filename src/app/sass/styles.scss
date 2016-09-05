@@ -1321,3 +1321,16 @@ span.count-description {
   transition: all 0.3s ease-in-out 0s;
   vertical-align: middle;
 }
+
+/* Override: Navigation */
+.navbar-custom {
+	.nav {
+		li {
+			a.active {
+				background: #3498db;
+				color: #fff;
+			}
+		}
+	}
+
+}

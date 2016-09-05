@@ -23,7 +23,7 @@ Mr. Teerapong Singthong (GOLF)
 6. Sass Preprocessor
 7. Browser Sync
 8. React-Bootstrap 3
-9. Material UI
+9. Material UI [Material Icon set](https://design.google.com/icons/)
 10. Redux
 
 # Unlearn and now leanred it

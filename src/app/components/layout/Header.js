@@ -43,13 +43,10 @@ class Header extends Component {
 									<NavLink to="/home">Home</NavLink>
 								</li>
 								<li>
-									<a className="page-scroll" href="#about">About</a>
+									<NavLink to="/database">Database</NavLink>
 								</li>
 								<li>
-									<NavLink to="/todo">Todo</NavLink>
-								</li>
-								<li>
-									<a className="page-scroll" href="#portfolio">Portfolio</a>
+									<NavLink to="/rest">REST APis</NavLink>
 								</li>
 								<li>
 									<a className="page-scroll" href="#pricing">Pricing</a>
