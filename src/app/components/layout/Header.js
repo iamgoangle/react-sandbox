@@ -11,16 +11,14 @@ import { render } from 'react-dom'
 
 import $ from 'jquery'
 import { sticky } from 'jquery-sticky'
+import NavLink from './NavLink'
+
+/**
+ * Active class menu
+ * https://github.com/reactjs/react-router-tutorial/tree/master/lessons/05-active-links
+ */
 
 class Header extends Component {
-	componentDidMount () {
-		return (
-			$(".header-area").sticky({
-				topSpacing: 0
-			})
-		)
-	}
-
 	render () {
 		return (
 			<header className="header-area">
@@ -41,14 +39,14 @@ class Header extends Component {
 						</div>
 						<div className="collapse navbar-collapse" id="tb-nav-collapse">
 							<ul className="nav navbar-nav navbar-right">
-								<li className="active">
-									<a className="page-scroll" href="#top">Home</a>
+								<li>
+									<NavLink to="/home">Home</NavLink>
 								</li>
 								<li>
 									<a className="page-scroll" href="#about">About</a>
 								</li>
 								<li>
-									<a className="page-scroll" href="#testimonial">Testimonial</a>
+									<NavLink to="/todo">Todo</NavLink>
 								</li>
 								<li>
 									<a className="page-scroll" href="#portfolio">Portfolio</a>
