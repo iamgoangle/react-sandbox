@@ -21,7 +21,8 @@ module.exports = {
 	devServer: {
 		hot: true,
 		inline: true,
-		progress: true
+		progress: true,
+		historyApiFallback: true
 	},
 	output: {
 		path: BUNDLE_DIR,
