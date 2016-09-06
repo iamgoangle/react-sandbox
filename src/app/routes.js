@@ -8,8 +8,8 @@ import MainApp from './components/layout/MainApp'
 import Home from './components/home/Home'
 
 // pages: Database
-import Database from './components/pages/Database'
-import Rest from './components/pages/Rest'
+import Database from './components/database/Database'
+import Rest from './components/rest/Rest'
 
 export default () => {
 	return (

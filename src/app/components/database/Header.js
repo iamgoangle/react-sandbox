@@ -18,17 +18,18 @@ import NavigationClose from 'material-ui/svg-icons/navigation/close'
 
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import injectTapEventPlugin from 'react-tap-event-plugin'
+injectTapEventPlugin()
 
 class Header extends Component {
 	constructor () {
 		super()
-		injectTapEventPlugin()
 	}
+
 	render () {
 		return (
 			<MuiThemeProvider>
 				<AppBar
-					title="Title"
+					title={this.props.title}
 					iconElementLeft={
 						<IconButton>
 							<NavigationClose />

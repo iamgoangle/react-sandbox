@@ -9,12 +9,21 @@
 import React, { Component } from 'react'
 import render from 'react-dom'
 
-import Header from '../page_Database/Header'
+import Header from './Header'
+import PageData from './PageData'
 
 class Database extends Component {
+	constructor () {
+		super()
+		this.title = 'Learning getting the data from the database'
+	}
+
 	render () {
 		return (
-			<Header />
+			<div>
+				<Header title={this.title} />
+				<PageData />
+			</div>
 		)
 	}
 }
