@@ -9,11 +9,9 @@
 import React, { Component } from 'react'
 import render from 'react-dom'
 
-// banner : components
-import Banner from '../banner/Banner'
-
-// home : components
-import AboutUs from './AboutUs'
+// components
+import Banner from '../../components/banner/Banner'
+import AboutUs from '../../components/home/AboutUs'
 
 class Home extends Component {
 	render () {

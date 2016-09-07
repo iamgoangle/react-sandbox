@@ -9,8 +9,8 @@
 import React, { Component } from 'react'
 import render from 'react-dom'
 
-import Header from './Header'
-import PageData from './PageData'
+import Header from '../../components/database/Header'
+import PageData from '../../components/database/PageData'
 
 class Database extends Component {
 	constructor () {

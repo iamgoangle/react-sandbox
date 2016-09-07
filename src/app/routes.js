@@ -1,21 +1,18 @@
 import React from 'react'
 import { Router, Route, IndexRoute, browserHistory } from 'react-router'
 
-// layout: MainApp
-import MainApp from './components/layout/MainApp'
+// layout container
+import MainApp from './containers/layout/MainApp'
 
-// home : components
-import Home from './components/home/Home'
-
-// pages: Database
-import Database from './components/database/Database'
-import Rest from './components/rest/Rest'
+// containers
+import Home from './containers/pages/Home'
+import Database from './containers/pages/Database'
+import Rest from './containers/pages/Rest'
 
 export default () => {
 	return (
 		<Router history={browserHistory}>
-			<Route path='/'
-				component={MainApp}>
+			<Route path='/' component={MainApp}>
 				<IndexRoute component={Home} />
 				<Route path='home'
 					component={Home}
