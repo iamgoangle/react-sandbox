@@ -22,3 +22,15 @@ render(
 	</AppContainer>,
 	rootElement
 )
+
+// if (module.hot) {
+// 	module.hot.accept('./containers/Root', () => {
+// 		const NextRootApp = require('./app/routes').default
+// 		render(
+// 			<AppContainer>
+// 				<NextRootApp />
+// 			</AppContainer>,
+// 			rootEl
+// 		);
+// 	});
+// }
