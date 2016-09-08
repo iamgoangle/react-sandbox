@@ -1,13 +1,18 @@
 {
-  "name": "my-gulp-project",
+  "name": "golf-reactjs",
   "version": "1.0.0",
-  "description": "My gulp project",
+  "description": "My learning about ReactJS",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack-dev-server --inline --progress --colors --config ./src/webpack/webpack.config.js"
   },
   "keywords": [
-    "gulp"
+    "react",
+    "gulp",
+    "redux",
+    "nodejs",
+    "nosql"
   ],
   "author": "Teerapong Singthong",
   "license": "ISC",
@@ -36,6 +41,7 @@
     "gulp-sourcemaps": "^1.6.0",
     "gulp-uglify": "^2.0.0",
     "gulp-util": "^3.0.7",
+    "html-webpack-plugin": "^2.22.0",
     "jquery": "^3.1.0",
     "jquery-sticky": "^1.0.4",
     "json-loader": "^0.5.4",
