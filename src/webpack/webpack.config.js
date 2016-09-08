@@ -13,15 +13,7 @@ const path = require('path')
 const ENTRY_DIR = path.resolve(__dirname, root.toString(), 'src/index.js')
 const BUNDLE_DIR = path.resolve(__dirname, root.toString(), 'dist/src/app')
 
-/*const HtmlWebpackPlugin = require('html-webpack-plugin');
-const webpackConfig = {
-	entry: 'index.js',
-	output: {
-		path: 'dist',
-		filename: 'index_bundle.js'
-	},
-	plugins: [new HtmlWebpackPlugin()]
-}*/
+let HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
 	devtool: 'source-map',
@@ -36,7 +28,7 @@ module.exports = {
 		port: 3030
 	},
 	output: {
-		publicPath: '/dist/',
+		// publicPath: '/dist/',
 		path: BUNDLE_DIR,
 		filename: '[name].bundle.js'
 	},
@@ -47,10 +39,15 @@ module.exports = {
 		extensions: ['', '.js', '.json']
 	},
 	plugins: [
-		/*new HtmlWebpackPlugin({
+		new HtmlWebpackPlugin({
 			hash: true,
-            filename: 'index.html'
-		})*/
+			template: path.resolve(__dirname, 'index.template.html'),
+			favicon: path.resolve(__dirname, 'favicon.ico'),
+			filename: 'index.html',
+			titie: 'Just another ReacrJS play ground.',
+			cache: true,
+			inject: 'body'
+		})
 	],
 	module: {
 		loaders: [{
