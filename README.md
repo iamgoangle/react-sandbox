@@ -26,6 +26,9 @@ Mr. Teerapong Singthong (GOLF)
 9. Material UI [Material Icon set](https://design.google.com/icons/)
 10. Redux
 
+# React plugins
+1. React Hot Loader
+
 # Webpack plugins
 1. html-webpack-plugin [Example 1](http://javascriptplayground.com/blog/2016/07/webpack-html-plugin/)
 [Example 2](https://github.com/ampedandwired/html-webpack-plugin) [Example 3 ](https://www.jonathan-petitcolas.com/2016/01/23/webpack-html-plugin-in-a-nutshell.html)

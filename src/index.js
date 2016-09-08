@@ -10,6 +10,15 @@ import React, { Component } from 'react'
 import { render } from 'react-dom'
 import { Router, Route, IndexRoute, browserHistory } from 'react-router'
 
-import routes from './app/routes'
+import { AppContainer } from 'react-hot-loader'
 
-render(routes(), document.getElementById('app'))
+import RouteEle from './app/routes'
+
+const rootElement = document.getElementById('app')
+
+render(
+	<AppContainer>
+		<RouteEle />
+	</AppContainer>,
+	rootElement
+)
