@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Router, Route, IndexRoute, browserHistory } from 'react-router'
 
 // layout container
-import MainApp from './containers/layout/MainApp'
+import App from './components/App'
 
 // containers
 import Home from './containers/pages/Home'
@@ -32,7 +32,7 @@ class RouteEle extends Component {
 	render () {
 		return (
 			<Router history={browserHistory}>
-				<Route path='/' component={MainApp}>
+				<Route path='/' component={App}>
 					<IndexRoute component={Home} />
 					<Route path='home'
 						component={Home}

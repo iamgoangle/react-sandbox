@@ -9,10 +9,10 @@
 import React, { Component } from 'react'
 import { render } from 'react-dom'
 
-import Header from './Header'
-import Footer from './Footer'
+import Header from '../containers/layout/Header'
+import Footer from '../containers/layout/Footer'
 
-class MainApp extends Component {
+class App extends Component {
     constructor () {
         super()
         this.title = "Home | My Sandbox"
@@ -34,4 +34,4 @@ class MainApp extends Component {
     }
 }
 
-export default MainApp
+export default App
