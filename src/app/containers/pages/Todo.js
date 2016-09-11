@@ -9,10 +9,10 @@
 import React, { Component } from 'react'
 import render from 'react-dom'
 
-import Header from '../../components/database/Header'
-import PageData from '../../components/database/PageData'
+import Header from '../../components/todo/Header'
+import PageData from '../../components/todo/PageData'
 
-class Database extends Component {
+class Todo extends Component {
 	constructor () {
 		super()
 		this.title = 'Learning getting the data from the database'
@@ -28,4 +28,4 @@ class Database extends Component {
 	}
 }
 
-export default Database
+export default Todo

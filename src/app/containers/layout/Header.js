@@ -43,7 +43,7 @@ class Header extends Component {
 									<NavLink to="/home">Home</NavLink>
 								</li>
 								<li>
-									<NavLink to="/database">Database</NavLink>
+									<NavLink to="/todo">Todo</NavLink>
 								</li>
 								<li>
 									<NavLink to="/rest">REST APis</NavLink>
