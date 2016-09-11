@@ -7,15 +7,16 @@ import PageData from '../../components/todo/PageData'
 // Redux
 import { connect } from 'react-redux'
 import store from '../../store'
-import getAllTodo from '../../actions/todoAction'
+import { getAllTodo } from '../../actions/todoAction'
 
 class Todo extends Component {
-	constructor (props) {
-		super(props)
+	constructor (props, context) {
+		super(props, context)
 		this.title = 'Learning getting the data from the database'
 	}
 
 	componentDidMount () {
+		store.dispatch(getAllTodo())
 		console.log(getAllTodo)
 	}
 
