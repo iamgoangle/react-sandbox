@@ -12,26 +12,31 @@ import { render } from 'react-dom'
 import Header from '../containers/layout/Header'
 import Footer from '../containers/layout/Footer'
 
-class App extends Component {
-    constructor () {
-        super()
-        this.title = "Home | My Sandbox"
-        document.title = this.title
-    }
-    componentDidUpdate () {
-        this.title = this.props.children.props.route.title
-        document.title = this.title
-    }
+// // Redux
+// import { Provider } from 'react-redux'
+// import store from '../store'
 
-    render() {
-        return (
-            <div>
-                <Header />
-                    {this.props.children}
-                <Footer />
-            </div>
-        )
-    }
+class App extends Component {
+	constructor (props) {
+		super(props)
+		this.title = "Home | My Sandbox"
+		document.title = this.title
+	}
+
+	componentDidUpdate () {
+		this.title = this.props.children.props.route.title
+		document.title = this.title
+	}
+
+	render() {
+		return (
+			<div>
+				<Header />
+					{this.props.children}
+				<Footer />
+			</div>
+		)
+	}
 }
 
 export default App

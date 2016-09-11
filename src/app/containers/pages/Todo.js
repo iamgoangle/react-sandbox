@@ -1,21 +1,22 @@
-/**
-* @Author: Teerapong Singthong <iamgoangle>
-* @Date:   Sep-05-2016
-* @Email:  st.teerapong@gmail.com
-* @Last modified by:   iamgoangle
-* @Last modified time: Sep-05-2016
-*/
-
 import React, { Component } from 'react'
 import render from 'react-dom'
 
 import Header from '../../components/todo/Header'
 import PageData from '../../components/todo/PageData'
 
+// Redux
+import { connect } from 'react-redux'
+import store from '../../store'
+import getAllTodo from '../../actions/todoAction'
+
 class Todo extends Component {
-	constructor () {
-		super()
+	constructor (props) {
+		super(props)
 		this.title = 'Learning getting the data from the database'
+	}
+
+	componentDidMount () {
+		console.log(getAllTodo)
 	}
 
 	render () {
@@ -28,4 +29,11 @@ class Todo extends Component {
 	}
 }
 
-export default Todo
+const mapStateToProps = function(store) {
+	return {
+		empDatas: store.empDatas
+	}
+}
+
+export default connect(mapStateToProps)(Todo)
+// export default Todo
