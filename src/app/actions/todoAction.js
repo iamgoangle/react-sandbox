@@ -1,7 +1,7 @@
 export const getAllTodo = () => {
 	return {
 		type: 'GET_ALLTODO',
-		empDatas: [{
+		users: [{
 			name: 'Teerapong Singthong',
 			status: 'Employed'
 		}]

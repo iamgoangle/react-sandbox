@@ -8,6 +8,7 @@ import App from './components/App'
 import Home from './containers/pages/Home'
 import Todo from './containers/pages/Todo'
 import Rest from './containers/pages/Rest'
+import EasyRedux from './containers/pages/EasyRedux'
 
 export default (
 	<Router history={browserHistory}>
@@ -22,6 +23,9 @@ export default (
 			<Route path='rest'
 				component={Rest}
 				title="REST APIs | Pull data from JSON REST APIS" />
+			<Route path='easy-redux'
+				component={EasyRedux}
+				title="Easy Redux | To learning easy redux from simple file" />
 		</Route>
 	</Router>
 )

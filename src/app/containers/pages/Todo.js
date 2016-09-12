@@ -9,6 +9,14 @@ import { connect } from 'react-redux'
 import store from '../../store'
 import { getAllTodo } from '../../actions/todoAction'
 
+// Mapping state to property
+const mapStateToProps = function(store) {
+	console.log(store.todoState)
+	return {
+		empDatas: store.todoState.users
+	}
+}
+
 class Todo extends Component {
 	constructor (props, context) {
 		super(props, context)
@@ -17,7 +25,6 @@ class Todo extends Component {
 
 	componentDidMount () {
 		store.dispatch(getAllTodo())
-		console.log(getAllTodo)
 	}
 
 	render () {
@@ -27,12 +34,6 @@ class Todo extends Component {
 				<PageData />
 			</div>
 		)
-	}
-}
-
-const mapStateToProps = function(store) {
-	return {
-		empDatas: store.empDatas
 	}
 }
 

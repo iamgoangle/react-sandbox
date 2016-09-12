@@ -2,7 +2,8 @@ const initialState = []
 const todoReducer = (state = initialState, action) => {
 	switch (action.type) {
 		case 'GET_ALLTODO':
-			return action.empDatas
+			// return action.datas
+			return Object.assign({}, state, { users: action.users })
 		default:
 			return state
 	}

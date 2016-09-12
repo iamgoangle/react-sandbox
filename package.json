@@ -1,11 +1,14 @@
 {
   "name": "golf-reactjs",
   "version": "1.0.0",
-  "description": "My learning about ReactJS",
+  "description": "React js play ground",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack-dev-server --inline --progress --colors --hot --config ./src/webpack/webpack.config.js"
+    "build:dev": "webpack-dev-server --inline --progress --colors --hot --config ./src/webpack/webpack.config.js",
+    "version:major": "npm version major",
+    "version:minor": "npm version minor",
+    "version:patch": "npm version patch",
+    "version:publish": "npm publish"
   },
   "keywords": [
     "react",
@@ -58,7 +61,9 @@
     "isomorphic-fetch": "^2.2.1",
     "react": "^15.3.1",
     "react-dom": "^15.3.1",
+    "react-redux": "^4.4.5",
     "react-tap-event-plugin": "^1.0.0",
+    "redux": "^3.6.0",
     "webpack-dev-server": "^1.15.1"
   }
 }

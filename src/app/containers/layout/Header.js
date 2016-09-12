@@ -49,7 +49,7 @@ class Header extends Component {
 									<NavLink to="/rest">REST APis</NavLink>
 								</li>
 								<li>
-									<a className="page-scroll" href="#pricing">Pricing</a>
+									<NavLink to="/easy-redux">Easy Redux</NavLink>
 								</li>
 								<li>
 									<a className="page-scroll" href="#blog">Blog</a>
