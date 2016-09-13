@@ -6,12 +6,8 @@
  * @Last modified time: Sep-06-2016
  */
 
-import React, {
-    Component
-} from 'react'
-import {
-    render
-} from 'react-dom'
+import React, { Component, PropTypes } from 'react'
+import { render } from 'react-dom'
 
 import {
     Table,
@@ -62,7 +58,7 @@ const tableData = [{
 }, {
     name: 'Adam Moore',
     status: 'Employed',
-}, ];
+}]
 
 class PageData extends Component {
     constructor(props) {
@@ -85,6 +81,12 @@ class PageData extends Component {
         }
     }
 
+    // get property type from container components
+    static propTypes: {
+        empDatas: PropTypes.array.isRequired,
+        onPageLoad: PropTypes.func.isRequired
+    }
+
     handleToggle (event, toggled) {
         this.setState({
             [event.target.name]: toggled,
@@ -97,7 +99,12 @@ class PageData extends Component {
         });
     }
 
+    componentDidMount () {
+        this.props.onPageLoad()
+    }
+
     render() {
+        console.log(this.props.empDatas.users)
         return (
 			<MuiThemeProvider>
 				<div>
@@ -129,7 +136,7 @@ class PageData extends Component {
 							showRowHover={this.state.showRowHover}
 							stripedRows={this.state.stripedRows}
 							>
-							{tableData.map( (row, index) => (
+							{this.props.empDatas.users.map( (row, index) => (
 							<TableRow key={index} selected={row.selected}>
 								<TableRowColumn>{index}</TableRowColumn>
 								<TableRowColumn>{row.name}</TableRowColumn>
