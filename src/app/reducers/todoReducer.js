@@ -1,4 +1,7 @@
-const initialState = []
+const initialState = {
+	users: []
+}
+
 const todoReducer = (state = initialState, action) => {
 	switch (action.type) {
 		case 'GET_ALLTODO':
