@@ -7,3 +7,13 @@ export const getAllTodo = () => {
 		}]
 	}
 }
+
+export const addSingleTodo = () => {
+	return {
+		type: 'ADD_SINGLETODO',
+		users: {
+			name: 'Porntheera Apirachkul',
+			status: 'Unemployed'
+		}
+	}
+}

@@ -21,8 +21,26 @@ import injectTapEventPlugin from 'react-tap-event-plugin'
 injectTapEventPlugin()
 
 class Header extends Component {
-	constructor () {
-		super()
+	constructor (props, context) {
+		super(props, context)
+	}
+
+	static propTypes: {
+		onRefreshClick: PropTypes.func.isRequired,
+		onAddSingleTodo: PropTypes.func.isRequired
+	}
+
+	/* event handle */
+	handleRefreshClick = () => {
+		this.props.onRefreshClick()
+	}
+
+	handleAddSingle = () => {
+		this.props.onAddSingleTodo()
+	}
+
+	handleAddMultiple () {
+		console.log('add multiple record(s)')
 	}
 
 	render () {
@@ -43,11 +61,11 @@ class Header extends Component {
 								</IconButton>
 							}
 							targetOrigin={{horizontal: 'right', vertical: 'top'}}
-							anchorOrigin={{horizontal: 'right', vertical: 'top'}}
-						>
-							<MenuItem primaryText="Refresh" />
-							<MenuItem primaryText="Help" />
-							<MenuItem primaryText="Sign out" />
+							anchorOrigin={{horizontal: 'right', vertical: 'top'}}>
+
+							<MenuItem primaryText="Refresh" onClick={this.handleRefreshClick} />
+							<MenuItem primaryText="Add single record" onClick={this.handleAddSingle} />
+							<MenuItem primaryText="Add multiple record(s)" onClick={this.handleAddMultiple} />
 						</IconMenu>
 					}
 				/>

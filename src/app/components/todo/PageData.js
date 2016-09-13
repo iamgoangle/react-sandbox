@@ -81,23 +81,23 @@ class PageData extends Component {
         }
     }
 
-    // get property type from container components
-    static propTypes: {
-        empDatas: PropTypes.array.isRequired,
-        onPageLoad: PropTypes.func.isRequired
-    }
+	// get property type from container components
+	static propTypes: {
+		empDatas: PropTypes.array.isRequired,
+		onPageLoad: PropTypes.func.isRequired
+	}
 
-    handleToggle (event, toggled) {
-        this.setState({
-            [event.target.name]: toggled,
-        });
-    }
+	handleToggle (event, toggled) {
+		this.setState({
+			[event.target.name]: toggled,
+		});
+	}
 
-    handleChange (event) {
-        this.setState({
-            height: event.target.value
-        });
-    }
+	handleChange (event) {
+		this.setState({
+			height: event.target.value
+		});
+	}
 
     componentDidMount () {
         this.props.onPageLoad()
