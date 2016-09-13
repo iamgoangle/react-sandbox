@@ -54,6 +54,7 @@
     "react-tap-event-plugin": "^1.0.0",
     "require-dir": "^0.3.0",
     "webpack": "^1.13.2",
+    "webpack-browser-plugin": "^1.0.12",
     "webpack-dev-server": "^1.15.1",
     "webpack-stream": "^3.2.0"
   },
