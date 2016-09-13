@@ -10,6 +10,8 @@ const root = require('app-root-path')
 const webpack = require('webpack')
 const path = require('path')
 
+const WebpackBrowserPlugin = require('webpack-browser-plugin')
+
 const ENTRY_DIR = path.resolve(__dirname, root.toString(), 'src/index.js')
 const BUNDLE_DIR = path.resolve(__dirname, root.toString(), 'dist/src/app')
 
@@ -47,6 +49,11 @@ module.exports = {
 			titie: 'Just another ReacrJS play ground.',
 			cache: true,
 			inject: 'body'
+		}),
+		new WebpackBrowserPlugin({
+			browser: 'Chrome',
+			port: 3030,
+			url: 'http://localhost'
 		})
 	],
 	module: {
