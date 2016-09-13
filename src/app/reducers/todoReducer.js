@@ -20,12 +20,9 @@ const todoReducer = (state = initialState, action) => {
 			// 	]
 			// }
 
-			var users = []
-			console.log(Object.assign({}, users, action.users))
-
-			// let currentState = state
-			// currentState.users.push(action.users)
-			// return Object.assign({}, state, { users: currentState })
+			let currentState = state
+			currentState.users.push(action.payload)
+			return Object.assign({}, state, { currentState })
 		default:
 			return state
 	}

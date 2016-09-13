@@ -9,10 +9,11 @@ export const getAllTodo = () => {
 }
 
 export const addSingleTodo = () => {
+	const genName = Math.random().toString(36).substring(7)
 	return {
 		type: 'ADD_SINGLETODO',
-		users: {
-			name: 'Porntheera Apirachkul',
+		payload: {
+			name: genName,
 			status: 'Unemployed'
 		}
 	}
