@@ -50,7 +50,7 @@ class EasyRedux extends Component {
 		store.dispatch(clickINC())	// 2
 		store.dispatch(clickINC())	// 3
 
-		store.dispatch(clickDEC())	// 2
+		this.props.dispatch(clickDEC())	// 2
 	}
 
 	render () {

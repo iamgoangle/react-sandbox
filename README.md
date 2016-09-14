@@ -10,24 +10,22 @@ Mr. Teerapong Singthong (GOLF)
 1. Fork
 2. open cmd.exe
 3. run this command `npm install`
-4. once it completely installation, ensure your firewall port:3000 is already allowed
-5. `npm start` or run it as manually by your self `webpack-dev-server --hot --inline --progress --colors --port 3000`
-6. open [http://localhost:3000/app](http://localhost:3000/app) on your web browser
+4. once it completely installation, ensure your firewall port:3030 is already allowed
+5. `npm run build:dev``
+6. waiting 3-5 second, the browser will automatically launch
 
 # Stack Lists
-1. React.js
+1. React
 2. Node.js
-3. Webpack, webpack-dev-server
+3. Webpack
 4. Gulp
 5. Babel
 6. Sass Preprocessor
-7. Browser Sync
+7. ES5, ES6
 8. React-Bootstrap 3
 9. Material UI [Material Icon set](https://design.google.com/icons/)
 10. Redux
-
-# React plugins
-1. React Hot Loader
+11. Axios, isomorphic-fetch
 
 # Webpack plugins
 1. html-webpack-plugin [Example 1](http://javascriptplayground.com/blog/2016/07/webpack-html-plugin/)
@@ -42,3 +40,4 @@ Mr. Teerapong Singthong (GOLF)
 2. [Singleton Pattern](https://en.wikipedia.org/wiki/Singleton_pattern) [Singletom Design pattern](https://sourcemaking.com/design_patterns/singleton)
 3. [Redux - connect()] (https://github.com/reactjs/react-redux/blob/master/docs/api.md#connectmapstatetoprops-mapdispatchtoprops-mergeprops-options)
 4. Passing parameter when onClick [link](http://stackoverflow.com/questions/34350988/react-passing-parameter-via-onclick-event-using-es6-syntax) `Remember that in onClick={ ... }, the ... is a JavaScript expression In other words, you call this.handleRemove(id) immediately, and pass that value to onClick, which isn't what you want.`
+5. JS Spread syntax [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_operator) myFunc(...[10, 11, 12)
