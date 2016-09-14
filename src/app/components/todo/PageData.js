@@ -1,11 +1,3 @@
-/**
- * @Author: Teerapong Singthong <iamgoangle>
- * @Date:   Sep-06-2016
- * @Email:  st.teerapong@gmail.com
- * @Last modified by:   iamgoangle
- * @Last modified time: Sep-06-2016
- */
-
 import React, { Component, PropTypes } from 'react'
 import { render } from 'react-dom'
 
@@ -34,31 +26,6 @@ const styles = {
         margin: '20px auto 10px',
     }
 }
-
-const tableData = [{
-    name: 'John Smith',
-    status: 'Employed',
-    selected: true,
-}, {
-    name: 'Randal White',
-    status: 'Unemployed',
-}, {
-    name: 'Stephanie Sanders',
-    status: 'Employed',
-    selected: true,
-}, {
-    name: 'Steve Brown',
-    status: 'Employed',
-}, {
-    name: 'Joyce Whitten',
-    status: 'Employed',
-}, {
-    name: 'Samuel Roberts',
-    status: 'Employed',
-}, {
-    name: 'Adam Moore',
-    status: 'Employed',
-}]
 
 class PageData extends Component {
     constructor(props) {
@@ -103,8 +70,7 @@ class PageData extends Component {
         this.props.onPageLoad()
     }
 
-    render() {
-        console.log(this.props.empDatas.users)
+    render () {
         return (
 			<MuiThemeProvider>
 				<div>
@@ -134,19 +100,18 @@ class PageData extends Component {
 							displayRowCheckbox={this.state.showCheckboxes}
 							deselectOnClickaway={this.state.deselectOnClickaway}
 							showRowHover={this.state.showRowHover}
-							stripedRows={this.state.stripedRows}
-							>
+							stripedRows={this.state.stripedRows}>
+
 							{this.props.empDatas.users.map( (row, index) => (
-							<TableRow key={index} selected={row.selected}>
-								<TableRowColumn>{index}</TableRowColumn>
-								<TableRowColumn>{row.name}</TableRowColumn>
-								<TableRowColumn>{row.status}</TableRowColumn>
-							</TableRow>
+    							<TableRow key={index} selected={row.selected}>
+    								<TableRowColumn>{index}</TableRowColumn>
+    								<TableRowColumn>{row.name}</TableRowColumn>
+    								<TableRowColumn>{row.status}</TableRowColumn>
+    							</TableRow>
 							))}
 						</TableBody>
 						<TableFooter
-							adjustForCheckbox={this.state.showCheckboxes}
-							>
+                            adjustForCheckbox={this.state.showCheckboxes}>
 							<TableRow>
 								<TableRowColumn>ID</TableRowColumn>
 								<TableRowColumn>Name</TableRowColumn>
