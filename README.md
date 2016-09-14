@@ -40,3 +40,4 @@ Mr. Teerapong Singthong (GOLF)
 # New learning
 1. [Why use “this.props.dispatch” rather than “store.dispatch” directly in Redux?](http://stackoverflow.com/questions/33221634/why-use-this-props-dispatch-rather-than-store-dispatch-directly-in-redux)
 2. [Singleton Pattern](https://en.wikipedia.org/wiki/Singleton_pattern) [Singletom Design pattern](https://sourcemaking.com/design_patterns/singleton)
+3. [Redux - connect()] (https://github.com/reactjs/react-redux/blob/master/docs/api.md#connectmapstatetoprops-mapdispatchtoprops-mergeprops-options)
