@@ -41,3 +41,12 @@ Mr. Teerapong Singthong (GOLF)
 1. [Why use “this.props.dispatch” rather than “store.dispatch” directly in Redux?](http://stackoverflow.com/questions/33221634/why-use-this-props-dispatch-rather-than-store-dispatch-directly-in-redux)
 2. [Singleton Pattern](https://en.wikipedia.org/wiki/Singleton_pattern) [Singletom Design pattern](https://sourcemaking.com/design_patterns/singleton)
 3. [Redux - connect()] (https://github.com/reactjs/react-redux/blob/master/docs/api.md#connectmapstatetoprops-mapdispatchtoprops-mergeprops-options)
+4. Passing parameter when onClick [link](http://stackoverflow.com/questions/34350988/react-passing-parameter-via-onclick-event-using-es6-syntax) `Remember that in onClick={ ... }, the ... is a JavaScript expression 	
+Remember that in onClick={ ... }, the ... is a JavaScript expression. So
+
+... onClick={this.handleRemove(id)}
+is the same as
+
+var val = this.handleRemove(id);
+... onClick={val}
+In other words, you call this.handleRemove(id) immediately, and pass that value to onClick, which isn't what you want.`
