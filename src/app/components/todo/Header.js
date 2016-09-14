@@ -21,8 +21,12 @@ import injectTapEventPlugin from 'react-tap-event-plugin'
 injectTapEventPlugin()
 
 class Header extends Component {
-	constructor (props, context) {
-		super(props, context)
+	constructor () {
+		super()
+
+		// ES5 style, bind certain keyword this
+		// this.handleRefreshClick = this.handleRefreshClick.bind(this)
+		// this.handleAddSingle = this.handleAddSingle.bind(this)
 	}
 
 	static propTypes: {
@@ -30,8 +34,8 @@ class Header extends Component {
 		onAddSingleTodo: PropTypes.func.isRequired
 	}
 
-	/* event handle */
-	handleRefreshClick = () => {
+	/* encapsulate event handle only for this component */
+	handleRefreshClick = (q) => {
 		this.props.onRefreshClick()
 	}
 
@@ -39,8 +43,12 @@ class Header extends Component {
 		this.props.onAddSingleTodo()
 	}
 
-	handleAddMultiple () {
-		console.log('add multiple record(s)')
+	handleAddMultiple = (qty) => {
+		console.log(qty)
+	}
+
+	handlePullFromJSON = () => {
+		console.log('pull data from json')
 	}
 
 	render () {
@@ -63,12 +71,20 @@ class Header extends Component {
 							targetOrigin={{horizontal: 'right', vertical: 'top'}}
 							anchorOrigin={{horizontal: 'right', vertical: 'top'}}>
 
-							<MenuItem primaryText="Refresh" onClick={this.handleRefreshClick} />
-							<MenuItem primaryText="Add single record" onClick={this.handleAddSingle} />
-							<MenuItem primaryText="Add multiple record(s)" onClick={this.handleAddMultiple} />
+							<MenuItem
+								primaryText="Undo change"
+								onClick={() => this.handleRefreshClick} />
+							<MenuItem
+								primaryText="Add single record"
+								onClick={() => this.handleAddSingle()} />
+							<MenuItem
+								primaryText="Add multiple record(s)"
+								onClick={() => this.handleAddMultiple(5)} />
+							<MenuItem
+								primaryText="Pull data from JSON"
+								onClick={this.handlePullFromJSON} />
 						</IconMenu>
-					}
-				/>
+					} />
 			</MuiThemeProvider>
 		)
 	}
