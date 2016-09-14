@@ -1,56 +1,78 @@
 import React, { Component } from 'react'
 import { render } from 'react-dom'
-import { createStore } from 'redux'
+import { combineReducers, createStore } from 'redux'
 
 class EasyRedux extends Component {
 	componentDidMount () {
-		/* reducer */
-		const initialState = []
-		const reducer = (state = initialState, action) => {
+		// userReducer.js
+		const userReducer = (state={}, action) => {
 			switch (action.type) {
-				case 'INC':
-					return state + action.payload
+				case 'CHANGE_NAME':
+					return {...state, name: action.payload}
 				break
-
-				case 'DEC':
-					return state - action.decreasing
+				case 'CHANGE_AGE':
+					return {...state, age: action.payload}
 				break
-
-				default:
-					return state
-				break;
 			}
+
+			return state
 		}
 
-		/* my-action.js */
-		const clickINC = () => {
+		// tweetsReducer.js
+		const tweetsReducer = (state=[], action) => {
+			switch (action.type) {
+				case 'CHANGE_TWEET':
+					return {...state, msg: action.payload}
+				break
+			}
+			return state
+		}
+
+		// action.js
+		const changeName = function (name) {
 			return {
-				type: 'INC',
-				payload: 1
+				type: 'CHANGE_NAME',
+				payload: name
 			}
 		}
 
-		const clickDEC = () => {
+		const changeAge = function (age) {
 			return {
-				type: 'DEC',
-				decreasing: 1
+				type: 'CHANGE_AGE',
+				payload: age
 			}
 		}
 
-		/* store.js */
-		const store = createStore(reducer, 0)
+		const changeTweet = function (tweet) {
+			return {
+				type: 'CHANGE_TWEET',
+				payload: tweet
+			}
+		}
+
+		// reducers/index.js
+		const reducers = combineReducers ({
+			user: userReducer,
+			tweet: tweetsReducer
+		})
+
+		const store = createStore(reducers)
 
 		/* subscribe */
 		store.subscribe(() => {
-			console.log("store changed: " + store.getState())
+			console.log("store changed:")
+			console.log(store.getState())
 		})
 
 		/* handleClick*/
-		store.dispatch(clickINC())	// 1
-		store.dispatch(clickINC())	// 2
-		store.dispatch(clickINC())	// 3
+		store.dispatch(changeName('Porntheera'))
+		store.dispatch(changeAge(30))
+		store.dispatch(changeTweet(["Too fat"]))
 
-		this.props.dispatch(clickDEC())	// 2
+		store.dispatch(changeName('Teerapong'))
+		store.dispatch(changeAge(19))
+		store.dispatch(changeTweet(["Too Richman Toy"]))
+		// store.dispatch({type: "CHANGE_NAME", payload: "Porntheera"})
 	}
 
 	render () {
