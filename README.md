@@ -36,3 +36,6 @@ Mr. Teerapong Singthong (GOLF)
 # Resolving solution
 1. [Resolve root directory by using resolve.root in webpack](https://medium.com/@goangle/webpack-resolve-import-require-path-that-refers-to-root-directory-by-resolve-root-1775fdc5723b#.pzvy0cq0e)
 2. Using static keyword with babel [http://stackoverflow.com/questions/38363156/static-proptypes-not-working-under-es6](http://stackoverflow.com/questions/38363156/static-proptypes-not-working-under-es6)
+3. 
+# New learning
+1. [Why use “this.props.dispatch” rather than “store.dispatch” directly in Redux?](http://stackoverflow.com/questions/33221634/why-use-this-props-dispatch-rather-than-store-dispatch-directly-in-redux)
