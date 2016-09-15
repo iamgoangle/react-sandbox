@@ -24,7 +24,7 @@ Mr. Teerapong Singthong (GOLF)
 7. ES5, ES6
 8. React-Bootstrap 3
 9. Material UI [Material Icon set](https://design.google.com/icons/)
-10. Redux
+10. Redux, Middleware, Thunk
 11. Axios, isomorphic-fetch
 
 # Webpack plugins
@@ -41,3 +41,10 @@ Mr. Teerapong Singthong (GOLF)
 3. [Redux - connect()] (https://github.com/reactjs/react-redux/blob/master/docs/api.md#connectmapstatetoprops-mapdispatchtoprops-mergeprops-options)
 4. Passing parameter when onClick [link](http://stackoverflow.com/questions/34350988/react-passing-parameter-via-onclick-event-using-es6-syntax) `Remember that in onClick={ ... }, the ... is a JavaScript expression In other words, you call this.handleRemove(id) immediately, and pass that value to onClick, which isn't what you want.`
 5. JS Spread syntax [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_operator) myFunc(...[10, 11, 12)
+6. React Style Guide [https://github.com/airbnb/javascript/tree/master/react](https://github.com/airbnb/javascript/tree/master/react)
+7. React Ajax Best Practice [http://andrewhfarmer.com/react-ajax-best-practices/](http://andrewhfarmer.com/react-ajax-best-practices/)
+8. React XHR Library [http://andrewhfarmer.com/ajax-libraries/](http://andrewhfarmer.com/ajax-libraries/)
+9. Middleware and Redux React life cycle [https://medium.com/@rajaraodv/using-middlewares-in-react-redux-apps-f7c9652610c6#.54m7xiu45](https://medium.com/@rajaraodv/using-middlewares-in-react-redux-apps-f7c9652610c6#.54m7xiu45)
+10. [http://stackoverflow.com/questions/35439019/redux-promise-with-axios-and-how-do-deal-with-errors](http://stackoverflow.com/questions/35439019/redux-promise-with-axios-and-how-do-deal-with-errors)
+11. Thunk [http://danmaz74.me/2015/08/19/from-flux-to-redux-async-actions-the-easy-way/](http://danmaz74.me/2015/08/19/from-flux-to-redux-async-actions-the-easy-way/)
+12. Redux Thunk [https://github.com/gaearon/redux-thunk](https://github.com/gaearon/redux-thunk)

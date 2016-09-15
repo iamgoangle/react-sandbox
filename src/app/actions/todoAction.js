@@ -1,6 +1,19 @@
+/* TODO: Move endpoint server to centralize folder */
+const _configEndPoint = {
+	host: 'http://localhost:3030',
+	apiKey: ''
+}
+
+/* TODO: Action type should be move to actionType.js */
+const _actionType = {
+	getAllTodo: 'GET_ALLTODO',
+	addSingleTodo: 'ADD_SINGLETODO',
+	fetchTodo: 'FETCH_TODO'
+}
+
 export const getAllTodo = () => {
 	return {
-		type: 'GET_ALLTODO',
+		type: _actionType.getAllTodo,
 		users: [{
 			name: 'Teerapong Singthong',
 			status: 'Employed'
@@ -8,13 +21,15 @@ export const getAllTodo = () => {
 	}
 }
 
-export const addSingleTodo = () => {
-	const genName = Math.random().toString(36).substring(7)
+export const addSingleTodo = (empDatas) => {
 	return {
-		type: 'ADD_SINGLETODO',
-		payload: {
-			name: genName,
-			status: 'Unemployed'
-		}
+		type: _actionType.addSingleTodo,
+		payload: empDatas
+	}
+}
+
+export const fetchTodo = () => {
+	return {
+		type: _actionType.fetchTodo
 	}
 }

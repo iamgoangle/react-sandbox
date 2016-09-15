@@ -1,11 +1,3 @@
-/**
-* @Author: Teerapong Singthong <iamgoangle>
-* @Date:   Sep-05-2016
-* @Email:  st.teerapong@gmail.com
-* @Last modified by:   iamgoangle
-* @Last modified time: Sep-05-2016
-*/
-
 import React, { Component } from 'react'
 import { render } from 'react-dom'
 
@@ -21,8 +13,8 @@ import injectTapEventPlugin from 'react-tap-event-plugin'
 injectTapEventPlugin()
 
 class Header extends Component {
-	constructor () {
-		super()
+	constructor (props, context) {
+		super(props, context)
 
 		// ES5 style, bind certain keyword this
 		// this.handleRefreshClick = this.handleRefreshClick.bind(this)
@@ -31,20 +23,32 @@ class Header extends Component {
 
 	static propTypes: {
 		onRefreshClick: PropTypes.func.isRequired,
-		onAddSingleTodo: PropTypes.func.isRequired
+		onAddSingleTodo: PropTypes.func.isRequired,
+		title: PropTypes.string.isRequired,
+		empDatas: PropsType.array.isRequired
 	}
 
 	/* encapsulate event handle only for this component */
-	handleRefreshClick = (q) => {
+	handleRefreshClick = () => {
 		this.props.onRefreshClick()
 	}
 
 	handleAddSingle = () => {
-		this.props.onAddSingleTodo()
+		const generateNewTodo = Math.random().toString(36).substring(7)
+		const currentState = this.props.empDatas
+		const newEmpData = {name: generateNewTodo, status: 'Unemployed'}
+
+		// add new todo to current state
+		currentState.users.push(newEmpData)
+
+		const EmpDatas = Object.assign({}, currentState)
+		// const EmpDatas = {...currentState}
+
+		this.props.onAddSingleTodo(EmpDatas)
 	}
 
 	handleAddMultiple = (qty) => {
-		console.log(qty)
+
 	}
 
 	handlePullFromJSON = () => {
@@ -73,7 +77,7 @@ class Header extends Component {
 
 							<MenuItem
 								primaryText="Undo change"
-								onClick={() => this.handleRefreshClick} />
+								onClick={() => this.handleRefreshClick()} />
 							<MenuItem
 								primaryText="Add single record"
 								onClick={() => this.handleAddSingle()} />

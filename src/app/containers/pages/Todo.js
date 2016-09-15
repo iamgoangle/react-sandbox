@@ -41,8 +41,8 @@ const mapDispatchToProps = (dispatch) => {
 		onTodoClick: () => {
 			dispatch(getAllTodo())
 		},
-		onAddSingleTodo: () => {
-			dispatch(addSingleTodo())
+		onAddSingleTodo: (empDatas) => {
+			dispatch(addSingleTodo(empDatas))
 		}
 	}
 }
@@ -50,14 +50,15 @@ const mapDispatchToProps = (dispatch) => {
 class Todo extends Component {
 	constructor (props, context) {
 		super(props, context)
+		this.title = "Example todo"
 	}
 
 	onRefreshClick = () => {
 		this.props.onPageLoad()
 	}
 
-	onAddSingleTodo = () => {
-		this.props.onAddSingleTodo()
+	onAddSingleTodo = (empDatas) => {
+		this.props.onAddSingleTodo(empDatas)
 	}
 
 	render () {
@@ -66,7 +67,8 @@ class Todo extends Component {
 				<Header
 					title={this.title}
 					onRefreshClick={this.onRefreshClick}
-					onAddSingleTodo={this.onAddSingleTodo} />
+					onAddSingleTodo={this.onAddSingleTodo}
+					empDatas={this.props.empDatas} />
 
 				<PageData
 					empDatas={this.props.empDatas}
