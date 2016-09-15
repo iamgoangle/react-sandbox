@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { render } from 'react-dom'
-import { combineReducers, createStore } from 'redux'
+import { applyMiddleware, combineReducers, createStore } from 'redux'
 
 class EasyRedux extends Component {
 	componentDidMount () {
@@ -12,6 +12,9 @@ class EasyRedux extends Component {
 				break
 				case 'CHANGE_AGE':
 					return {...state, age: action.payload}
+				break
+				case 'E':
+					throw new Error('AAA!!!')
 				break
 			}
 
@@ -56,7 +59,23 @@ class EasyRedux extends Component {
 			tweet: tweetsReducer
 		})
 
-		const store = createStore(reducers)
+		// man-in-the-middle between action and reducer store
+		const logger = (store) => (next) => (action) => {
+			console.log("action fired", action)
+			next(action)
+		}
+
+		const error = (store) => (next) => (action) => {
+			try {
+				next(action)
+			} catch(e) {
+				console.log('Ahhhh', e)
+			}
+		}
+
+		const middleware = applyMiddleware(logger, error)
+
+		const store = createStore(reducers, middleware)
 
 		/* subscribe */
 		store.subscribe(() => {
@@ -72,6 +91,9 @@ class EasyRedux extends Component {
 		store.dispatch(changeName('Teerapong'))
 		store.dispatch(changeAge(19))
 		store.dispatch(changeTweet(["Too Richman Toy"]))
+		store.dispatch(changeTweet(["To be a Supper man"]))
+
+		store.dispatch({type: 'E'})
 		// store.dispatch({type: "CHANGE_NAME", payload: "Porntheera"})
 	}
 
