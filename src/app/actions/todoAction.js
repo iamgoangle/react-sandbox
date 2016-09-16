@@ -8,7 +8,8 @@ const _configEndPoint = {
 const _actionType = {
 	getAllTodo: 'GET_ALLTODO',
 	addSingleTodo: 'ADD_SINGLETODO',
-	fetchTodo: 'FETCH_TODO'
+	fetchTodo: 'FETCH_TODO',
+	removeTodo: 'DEL_TODO'
 }
 
 export const getAllTodo = () => {
@@ -25,6 +26,13 @@ export const addSingleTodo = (newTodo) => {
 	return {
 		type: _actionType.addSingleTodo,
 		users: newTodo
+	}
+}
+
+export const removeTodo = (index) => {
+	return {
+		type: _actionType.removeTodo,
+		users: index
 	}
 }
 
