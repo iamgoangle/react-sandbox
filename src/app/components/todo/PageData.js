@@ -50,7 +50,7 @@ class PageData extends Component {
 
 	// get property type from container components
 	static propTypes: {
-		empDatas: PropTypes.array.isRequired,
+		todos: PropTypes.array.isRequired,
 		onPageLoad: PropTypes.func.isRequired
 	}
 
@@ -66,7 +66,7 @@ class PageData extends Component {
 		});
 	}
 
-    componentDidMount () {
+    componentWillMount () {
         this.props.onPageLoad()
     }
 
@@ -102,7 +102,7 @@ class PageData extends Component {
 							showRowHover={this.state.showRowHover}
 							stripedRows={this.state.stripedRows}>
 
-							{this.props.empDatas.users.map( (row, index) => (
+							{this.props.todos.map( (row, index) => (
     							<TableRow key={index} selected={row.selected}>
     								<TableRowColumn>{index}</TableRowColumn>
     								<TableRowColumn>{row.name}</TableRowColumn>
