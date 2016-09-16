@@ -1,12 +1,23 @@
 import React, { Component } from 'react'
 import { render } from 'react-dom'
 
+// AppBar
 import AppBar from 'material-ui/AppBar'
+
+// Button collection
 import IconButton from 'material-ui/IconButton'
+import FlatButton from 'material-ui/FlatButton'
+import FontIcon from 'material-ui/FontIcon'
+
+// Menu
 import IconMenu from 'material-ui/IconMenu'
 import MenuItem from 'material-ui/MenuItem'
-import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert'
+
+// Icon collection
 import NavigationClose from 'material-ui/svg-icons/navigation/close'
+import ActionFace from 'material-ui/svg-icons/action/face'
+import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert'
+import ActionAndroid from 'material-ui/svg-icons/action/android'
 
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import injectTapEventPlugin from 'react-tap-event-plugin'
@@ -54,8 +65,8 @@ class Header extends Component {
 					title={this.props.title}
 					iconElementLeft={
 						<IconButton>
-							<NavigationClose />
-							</IconButton>
+							<ActionFace />
+						</IconButton>
 					}
 					iconElementRight={
 						<IconMenu
