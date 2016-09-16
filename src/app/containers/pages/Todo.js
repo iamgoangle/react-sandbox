@@ -23,7 +23,7 @@ from '../../actions/todoAction'
 */
 const mapStateToProps = (state) => {
 	return {
-		empDatas: state.todoState
+		todos: state.todoState
 	}
 }
 
@@ -41,8 +41,8 @@ const mapDispatchToProps = (dispatch) => {
 		onTodoClick: () => {
 			dispatch(getAllTodo())
 		},
-		onAddSingleTodo: (empDatas) => {
-			dispatch(addSingleTodo(empDatas))
+		onAddSingleTodo: (newTodo) => {
+			dispatch(addSingleTodo(newTodo))
 		}
 	}
 }
@@ -57,8 +57,8 @@ class Todo extends Component {
 		this.props.onPageLoad()
 	}
 
-	onAddSingleTodo = (empDatas) => {
-		this.props.onAddSingleTodo(empDatas)
+	onAddSingleTodo = (newTodo) => {
+		this.props.onAddSingleTodo(newTodo)
 	}
 
 	render () {
@@ -68,10 +68,10 @@ class Todo extends Component {
 					title={this.title}
 					onRefreshClick={this.onRefreshClick}
 					onAddSingleTodo={this.onAddSingleTodo}
-					empDatas={this.props.empDatas} />
+					todos={this.props.todos} />
 
 				<PageData
-					empDatas={this.props.empDatas}
+					todos={this.props.todos}
 					onPageLoad={this.props.onPageLoad} />
 			</div>
 		)
