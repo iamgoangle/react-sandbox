@@ -25,7 +25,7 @@ class Header extends Component {
 		onRefreshClick: PropTypes.func.isRequired,
 		onAddSingleTodo: PropTypes.func.isRequired,
 		title: PropTypes.string.isRequired,
-		empDatas: PropsType.array.isRequired
+		todos: PropsType.array.isRequired
 	}
 
 	/* encapsulate event handle only for this component */
@@ -35,16 +35,8 @@ class Header extends Component {
 
 	handleAddSingle = () => {
 		const generateNewTodo = Math.random().toString(36).substring(7)
-		const currentState = this.props.empDatas
-		const newEmpData = {name: generateNewTodo, status: 'Unemployed'}
-
-		// add new todo to current state
-		currentState.users.push(newEmpData)
-
-		const EmpDatas = Object.assign({}, currentState)
-		// const EmpDatas = {...currentState}
-
-		this.props.onAddSingleTodo(EmpDatas)
+		const _newTodo = {name: generateNewTodo, status: 'Unemployed'}
+		this.props.onAddSingleTodo(_newTodo)
 	}
 
 	handleAddMultiple = (qty) => {
