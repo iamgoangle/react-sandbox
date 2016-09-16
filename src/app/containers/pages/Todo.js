@@ -11,7 +11,8 @@ import { connect } from 'react-redux'
 */
 import {
 	getAllTodo,
-	addSingleTodo
+	addSingleTodo,
+	removeTodo
 }
 from '../../actions/todoAction'
 
@@ -43,6 +44,10 @@ const mapDispatchToProps = (dispatch) => {
 		},
 		onAddSingleTodo: (newTodo) => {
 			dispatch(addSingleTodo(newTodo))
+		},
+		handleOnRemove: (todos) => {
+			dispatch(removeTodo(todos))
+			return true
 		}
 	}
 }
@@ -72,7 +77,8 @@ class Todo extends Component {
 
 				<PageData
 					todos={this.props.todos}
-					onPageLoad={this.props.onPageLoad} />
+					onPageLoad={this.props.onPageLoad}
+					handleOnRemove={this.props.handleOnRemove} />
 			</div>
 		)
 	}
