@@ -1,4 +1,4 @@
-# Yellow Duck dot I/O company present :)
+# Yellow Duck dot I/O
 I am thrilled with React JS world. This repository is created to learn all about React JS world.
 
 ![Golf company logo](https://raw.githubusercontent.com/iamgoangle/york-town-react-js/master/assets/images/iamgoangle-logo.png)
@@ -49,5 +49,5 @@ Mr. Teerapong Singthong (GOLF)
 11. Thunk [http://danmaz74.me/2015/08/19/from-flux-to-redux-async-actions-the-easy-way/](http://danmaz74.me/2015/08/19/from-flux-to-redux-async-actions-the-easy-way/)
 12. Redux Thunk [https://github.com/gaearon/redux-thunk](https://github.com/gaearon/redux-thunk)
 
-# To remind my self
-1. ## Reducer We don't mutate the state / The reducer is a pure function that takes the previous state and an action, and returns the next state.
+# To remind myself
+1. ((Reducer)) We don't mutate the state / The reducer is a pure function that takes the previous state and an action, and returns the next state.
