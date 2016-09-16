@@ -48,7 +48,7 @@ Mr. Teerapong Singthong (GOLF)
 10. [http://stackoverflow.com/questions/35439019/redux-promise-with-axios-and-how-do-deal-with-errors](http://stackoverflow.com/questions/35439019/redux-promise-with-axios-and-how-do-deal-with-errors)
 11. Thunk [http://danmaz74.me/2015/08/19/from-flux-to-redux-async-actions-the-easy-way/](http://danmaz74.me/2015/08/19/from-flux-to-redux-async-actions-the-easy-way/)
 12. Redux Thunk [https://github.com/gaearon/redux-thunk](https://github.com/gaearon/redux-thunk)
-13. Remove state array [http://stackoverflow.com/questions/34582678/is-this-the-correct-way-to-delete-an-item-using-redux](http://stackoverflow.com/questions/34582678/is-this-the-correct-way-to-delete-an-item-using-redux)
+13. Remove state array [http://stackoverflow.com/questions/34582678/is-this-the-correct-way-to-delete-an-item-using-redux](http://stackoverflow.com/questions/34582678/is-this-the-correct-way-to-delete-an-item-using-redux) [https://egghead.io/lessons/javascript-redux-avoiding-array-mutations-with-concat-slice-and-spread](https://egghead.io/lessons/javascript-redux-avoiding-array-mutations-with-concat-slice-and-spread)
 
 # To remind myself
 1. ((Reducer)) We don't mutate the state / The reducer is a pure function that takes the previous state and an action, and returns the next state.
