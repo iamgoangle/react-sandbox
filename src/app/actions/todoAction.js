@@ -14,17 +14,17 @@ const _actionType = {
 export const getAllTodo = () => {
 	return {
 		type: _actionType.getAllTodo,
-		users: [{
+		users: {
 			name: 'Teerapong Singthong',
 			status: 'Employed'
-		}]
+		}
 	}
 }
 
-export const addSingleTodo = (empDatas) => {
+export const addSingleTodo = (newTodo) => {
 	return {
 		type: _actionType.addSingleTodo,
-		payload: empDatas
+		users: newTodo
 	}
 }
 
