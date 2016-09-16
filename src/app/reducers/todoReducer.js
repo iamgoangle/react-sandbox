@@ -6,6 +6,8 @@ const todoReducer = (state = initialState, action) => {
 			return [...state, action.users]
 		case 'ADD_SINGLETODO':
 			return [...state, action.users]
+		case 'DEL_TODO':
+			return [...state.slice(0, action.users), ...state.slice(action.users + 1)]
 		default:
 			return state
 	}
