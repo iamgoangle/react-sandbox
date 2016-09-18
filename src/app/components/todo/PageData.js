@@ -176,7 +176,7 @@ class PageData extends Component {
 							stripedRows={this.state.stripedRows}>
 
 							{this.props.todos.map( (row, index) => (
-    							<TableRow key={index} selected={row.selected}>
+    							<TableRow key={index}>
     								<TableRowColumn>{index}</TableRowColumn>
     								<TableRowColumn>{row.name}</TableRowColumn>
     								<TableRowColumn>{row.status}</TableRowColumn>

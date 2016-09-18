@@ -9,14 +9,9 @@ const rootElement = document.getElementById('app')
 import { Provider } from 'react-redux'
 import store from './app/store'
 
-// render(
-// 	<AppContainer>
-// 		<RouteEle />
-// 	</AppContainer>,
-// 	rootElement
-// )
-
 render(
-	<Provider store={store}>{router}</Provider>,
+	<Provider store={store}>
+		{router}
+	</Provider>,
 	rootElement
 )

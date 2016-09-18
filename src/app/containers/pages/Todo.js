@@ -12,7 +12,8 @@ import { connect } from 'react-redux'
 import {
 	getAllTodo,
 	addSingleTodo,
-	removeTodo
+	removeTodo,
+	fetchTodo
 }
 from '../../actions/todoAction'
 
@@ -48,6 +49,9 @@ const mapDispatchToProps = (dispatch) => {
 		handleOnRemove: (todos) => {
 			dispatch(removeTodo(todos))
 			return true
+		},
+		handleOnFetchJson: () => {
+			dispatch(fetchTodo())
 		}
 	}
 }
@@ -58,12 +62,20 @@ class Todo extends Component {
 		this.title = "Example todo"
 	}
 
+	/*
+		we can ignore these previate function, since we can send this.props.xxx
+		to presentation component directly instead
+	*/
 	onRefreshClick = () => {
 		this.props.onPageLoad()
 	}
 
 	onAddSingleTodo = (newTodo) => {
 		this.props.onAddSingleTodo(newTodo)
+	}
+
+	onFetchDataJSON = () => {
+		this.props.handleOnFetchJson()
 	}
 
 	render () {
@@ -73,6 +85,7 @@ class Todo extends Component {
 					title={this.title}
 					onRefreshClick={this.onRefreshClick}
 					onAddSingleTodo={this.onAddSingleTodo}
+					onFetchDataJSON={this.onFetchDataJSON}
 					todos={this.props.todos} />
 
 				<PageData

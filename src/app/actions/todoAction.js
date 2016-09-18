@@ -1,7 +1,9 @@
+import axios from 'axios'
+
 /* TODO: Move endpoint server to centralize folder */
 const _configEndPoint = {
-	host: 'http://localhost:3030',
-	apiKey: ''
+	HOST: 'http://localhost:3030/dist/api',
+	APIKEY: ''
 }
 
 /* TODO: Action type should be move to actionType.js */
@@ -15,7 +17,7 @@ const _actionType = {
 export const getAllTodo = () => {
 	return {
 		type: _actionType.getAllTodo,
-		users: {
+		payload: {
 			name: 'Teerapong Singthong',
 			status: 'Employed'
 		}
@@ -25,19 +27,29 @@ export const getAllTodo = () => {
 export const addSingleTodo = (newTodo) => {
 	return {
 		type: _actionType.addSingleTodo,
-		users: newTodo
+		payload: newTodo
 	}
 }
 
 export const removeTodo = (index) => {
 	return {
 		type: _actionType.removeTodo,
-		users: index
+		payload: index
 	}
 }
 
 export const fetchTodo = () => {
-	return {
-		type: _actionType.fetchTodo
+	return function (dispatch){
+		axios.get(`${_configEndPoint.HOST}/todos.json`)
+		.then(response => {
+			dispatch ({
+				type: _actionType.fetchTodo,
+				payload: response.data
+			})
+			console.log(json.stringify(response.data))
+		})
+		.catch( (error) => {
+			console.log(error)
+		})
 	}
 }

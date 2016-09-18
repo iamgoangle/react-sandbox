@@ -35,6 +35,7 @@ class Header extends Component {
 	static propTypes: {
 		onRefreshClick: PropTypes.func.isRequired,
 		onAddSingleTodo: PropTypes.func.isRequired,
+		onFetchDataJSON: PropTypes.func.isRequired,
 		title: PropTypes.string.isRequired,
 		todos: PropsType.array.isRequired
 	}
@@ -50,12 +51,8 @@ class Header extends Component {
 		this.props.onAddSingleTodo(_newTodo)
 	}
 
-	handleAddMultiple = (qty) => {
-
-	}
-
 	handlePullFromJSON = () => {
-		console.log('pull data from json')
+		this.props.onFetchDataJSON()
 	}
 
 	render () {
@@ -89,7 +86,7 @@ class Header extends Component {
 								onClick={() => this.handleAddMultiple(5)} />
 							<MenuItem
 								primaryText="Pull data from JSON"
-								onClick={this.handlePullFromJSON} />
+								onClick={() => this.handlePullFromJSON()} />
 						</IconMenu>
 					} />
 			</MuiThemeProvider>

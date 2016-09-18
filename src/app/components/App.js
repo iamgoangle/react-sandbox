@@ -12,9 +12,8 @@ import { render } from 'react-dom'
 import Header from '../containers/layout/Header'
 import Footer from '../containers/layout/Footer'
 
-// // Redux
-// import { Provider } from 'react-redux'
-// import store from '../store'
+// Redux
+import { Provider } from 'react-redux'
 import store from '../store'
 
 class App extends Component {
