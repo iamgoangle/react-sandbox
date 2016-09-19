@@ -10,6 +10,10 @@
     "version:patch": "npm version patch",
     "version:publish": "npm publish"
   },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/iamgoangle/react-sandbox"
+},
   "keywords": [
     "react",
     "gulp",
