@@ -1300,6 +1300,9 @@ span.count-description {
 
 .footer-section {
   background: #000;
+  position: fixed;
+  width: 100%;
+  bottom: 0px;
   .copyright-info a {
     color: #fff;
     font-size: 16px;
