@@ -13,7 +13,7 @@
   "repository": {
     "type": "git",
     "url": "git://github.com/iamgoangle/react-sandbox"
-},
+  },
   "keywords": [
     "react",
     "gulp",
@@ -33,7 +33,9 @@
     "babel-preset-stage-0": "^6.5.0",
     "babel-preset-stage-1": "^6.13.0",
     "babel-runtime": "^6.11.6",
+    "css-loader": "^0.25.0",
     "del": "^2.2.2",
+    "file-loader": "^0.9.0",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.1",
     "gulp-clean-css": "^2.0.12",
@@ -57,6 +59,8 @@
     "react-router": "^2.7.0",
     "react-tap-event-plugin": "^1.0.0",
     "require-dir": "^0.3.0",
+    "sass-loader": "^4.0.2",
+    "style-loader": "^0.13.1",
     "webpack": "^1.13.2",
     "webpack-browser-plugin": "^1.0.12",
     "webpack-dev-server": "^1.15.1",
