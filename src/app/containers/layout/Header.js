@@ -46,7 +46,7 @@ class Header extends Component {
 									<NavLink to="/todo">Todo</NavLink>
 								</li>
 								<li>
-									<NavLink to="/rest">REST APis</NavLink>
+									<NavLink to="/product">Product</NavLink>
 								</li>
 								<li>
 									<NavLink to="/easy-redux">Easy Redux</NavLink>

@@ -402,15 +402,15 @@ ul {
 }
 
 .hero-parallax-bg {
-  background: url("../img/bg/parallax/parallax-1.jpg") no-repeat fixed center (center / cover);
+  background: url("/dist/assets/bg/parallax/parallax-1.jpg") no-repeat fixed center (center / cover);
 }
 
 .hero-particle-bg {
-  background: url("../img/bg/particle/particle-2.jpg") no-repeat scroll center (center / cover);
+  background: url("/dist/assets/bg/particle/particle-2.jpg") no-repeat scroll center (center / cover);
 }
 
 .text-rotator-bg {
-  background: url("../img/bg/text-rotator/rotator-bg1.jpg") no-repeat fixed center (center / cover);
+  background: url("/dist/assets/bg/text-rotator/rotator-bg1.jpg") no-repeat fixed center (center / cover);
 }
 
 .hero-parallax-bg:before, .hero-particle-bg:before, .text-rotator-bg:before {
@@ -769,11 +769,11 @@ ul {
 .testimonial-section {
   position: relative;
   width: 100%;
-  background: url("../img/bg/testimonial-bg.jpg") no-repeat scroll center (center / cover);
+  background: url("/dist/assets/bg/testimonial-bg.jpg") no-repeat scroll center (center / cover);
 }
 
 .testimonial-parallax-bg {
-  background: url("../img/bg/testimonial-bg.jpg") no-repeat fixed center (center / cover);
+  background: url("/dist/assets/bg/testimonial-bg.jpg") no-repeat fixed center (center / cover);
 }
 
 .testimonial-section:before {
@@ -983,7 +983,7 @@ button {
 =============================== */
 
 .our-awards-section {
-  background: url("../img/bg/awards-bg.jpg") no-repeat fixed center (center / cover);
+  background: url("/dist/assets/bg/awards-bg.jpg") no-repeat fixed center (center / cover);
   width: 100%;
   position: relative;
   &:before {
@@ -1200,11 +1200,11 @@ span.count-description {
 .contact-us-section {
   position: relative;
   width: 100%;
-  background: url("../img/bg/contact-bg.jpg") no-repeat scroll center (center / cover);
+  background: url("/dist/assets/bg/contact-bg.jpg") no-repeat scroll center (center / cover);
 }
 
 .contact-parallax-bg {
-  background: url("../img/bg/contact-bg.jpg") no-repeat fixed center (center / cover);
+  background: url("/dist/assets/bg/contact-bg.jpg") no-repeat fixed center (center / cover);
 }
 
 .contact-title {

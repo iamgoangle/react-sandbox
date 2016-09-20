@@ -16,6 +16,8 @@ import Footer from '../containers/layout/Footer'
 import { Provider } from 'react-redux'
 import store from '../store'
 
+import '../sass/styles.scss'
+
 class App extends Component {
 	constructor (props) {
 		super(props)
