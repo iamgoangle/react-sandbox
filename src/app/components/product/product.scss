@@ -1,0 +1,29 @@
+@import "variable";
+
+div.itemRow {
+	margin: 5px;
+}
+
+div {
+	div.itemBox {
+		background-color: $boxItem;
+		border-radius: 5px;
+	}
+}
+
+div.itemPrice {
+	font-weight: bold;
+	margin-left: 11px;
+	cursor: pointer;
+	text-align: center;
+
+	&:hover {
+		background-color: $price-hover-bg;
+		color: $price-hover-color;
+		border-radius: 5px;
+	}
+}
+
+div.itemDetail {
+	background: #fff;
+}
