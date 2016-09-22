@@ -380,7 +380,7 @@ ul {
 .hero-section {
   position: relative;
   width: 100%;
-  height: 100vh;
+  height: 90vh;
   max-height: 900px;
 }
 
@@ -1302,7 +1302,10 @@ span.count-description {
   background: #000;
   position: absolute;
   width: 100%;
-  bottom: 0px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
   .copyright-info a {
     color: #fff;
     font-size: 16px;
