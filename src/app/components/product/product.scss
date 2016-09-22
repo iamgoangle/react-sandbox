@@ -8,22 +8,53 @@ div {
 	div.itemBox {
 		background-color: $boxItem;
 		border-radius: 5px;
+		margin: 10px;
+		-webkit-box-shadow: 0px 0px 5px 0px $box-shadow-color;
+		box-shadow: 0px 0px 5px 0px $box-shadow-color;
 	}
 }
 
 div.itemPrice {
 	font-weight: bold;
-	margin-left: 11px;
 	cursor: pointer;
 	text-align: center;
+	background-color: $price-bg;
+	color: $price-hover-color;
+	-webkit-border-radius: 0 5px 0 0;
+	border-radius: 0 5px 0 0;
 
 	&:hover {
 		background-color: $price-hover-bg;
-		color: $price-hover-color;
-		border-radius: 5px;
 	}
 }
 
 div.itemDetail {
 	background: #fff;
+	-webkit-border-radius: 0 0 5px 5px;
+	border-radius: 0 0 5px 5px;
+}
+
+div.itemThumbnail {
+	padding: 10px;
+	cursor: pointer;
+
+	img {
+		min-width: 150px;
+	    min-height: 100px;
+	    max-width: 200px;
+		max-height: 225px;
+		&:hover {
+			// opacity: 0.5;
+			-webkit-filter: grayscale(100%);
+			filter: grayscale(100%);
+			-webkit-transition: .3s ease-in-out;
+			transition: .3s ease-in-out;
+			-webkit-box-shadow: 0px 0px 5px 0px $box-shadow-color;
+			box-shadow: 0px 0px 5px 0px $box-shadow-color;
+		}
+	}
+}
+
+div.itemDescription {
+	padding: 10px;
 }
