@@ -6,6 +6,13 @@ I am thrilled with React JS world. This repository is created to learn all about
 # Author
 Mr. Teerapong Singthong (GOLF)
 
+# Leaning objective
+1. To familiar JavaScript coding with ES5, ES6
+2. To understand the differences between mutable and immutable (Pure function)
+3. React life-cycle, and using Redux to manage state and handling state
+4. Learning noSQL
+5. ...
+
 # Installation
 1. Fork
 2. open cmd.exe
