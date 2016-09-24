@@ -33,6 +33,7 @@ Mr. Teerapong Singthong (GOLF)
 9. Material UI [Material Icon set](https://design.google.com/icons/)
 10. Redux, Middleware, Thunk
 11. Axios, isomorphic-fetch
+12. Mongoose, MongoDB
 
 # Webpack plugins
 1. html-webpack-plugin [Example 1](http://javascriptplayground.com/blog/2016/07/webpack-html-plugin/)
