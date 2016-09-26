@@ -4,14 +4,14 @@
   "description": "React js play ground",
   "main": "index.js",
   "scripts": {
-    "build:dev": "webpack-dev-server --inline --progress --colors --hot --config ./src/webpack/webpack.config.js",
+    "start:dev": "webpack-dev-server --inline --progress --colors --hot --config ./src/webpack/webpack.config.js",
+	"start:server": "nodemon src/app/server/server.js --exec babel-node --presets es2015,stage-2",
+    "start:db": "mongod",
     "version:major": "npm version major",
     "version:minor": "npm version minor",
     "version:patch": "npm version patch",
     "version:publish": "npm publish",
-    "mongod": "mongo",
-    "start:db": "mongod",
-    "start:server": "nodemon src/app/server/server.js --exec babel-node"
+    "mongod": "mongo"
   },
   "repository": {
     "type": "git",
