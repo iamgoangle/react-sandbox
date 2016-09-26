@@ -10,7 +10,8 @@
     "version:patch": "npm version patch",
     "version:publish": "npm publish",
     "mongod": "mongo",
-    "start:db": "mongod"
+    "start:db": "mongod",
+    "start:server": "nodemon src/app/server/server.js --exec babel-node"
   },
   "repository": {
     "type": "git",
@@ -65,7 +66,6 @@
     "require-dir": "^0.3.0",
     "sass-loader": "^4.0.2",
     "style-loader": "^0.13.1",
-    "underscore": "^1.8.3",
     "webpack": "^1.13.2",
     "webpack-browser-plugin": "^1.0.12",
     "webpack-dev-server": "^1.15.1",

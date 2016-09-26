@@ -1,6 +1,7 @@
-var mongoose = require("mongoose")
-var Product = require("../models/products")
-var _ = require("underscore")
+// var mongoose = require("mongoose")
+import mongoose from 'mongoose'
+import Product from "../models/products"
+import _ from "underscore"
 
 var router = require("express").Router()
 // router.route("/Products/:id?")
