@@ -8,9 +8,6 @@
 
 import React, { Component } from 'react'
 import { render } from 'react-dom'
-
-import $ from 'jquery'
-import { sticky } from 'jquery-sticky'
 import NavLink from './NavLink'
 
 /**

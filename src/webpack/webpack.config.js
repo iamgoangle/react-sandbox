@@ -30,7 +30,8 @@ module.exports = {
 		root: [
 			path.resolve(__dirname, 'node_modules')
 		],
-		extensions: ['', '.js', '.json']
+		modulesDirectories: ['node_modules'],
+		extensions: ['', '.js', '.json', '.scss']
 	},
 	plugins: [
 		new HtmlWebpackPlugin({

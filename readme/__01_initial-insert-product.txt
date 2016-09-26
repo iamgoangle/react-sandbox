@@ -1,0 +1,7 @@
+1) Install mongodb
+2) Open cmd.exe to starting the db server
+3) Press mongdo and enter
+4) Open another cmd.exe
+5) Press mongo
+6) Use golfdb to create new database
+7) Run node _01-insert-data-product.js to insert product data
