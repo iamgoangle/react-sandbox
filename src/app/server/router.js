@@ -8,11 +8,10 @@ const productsController = require('./controllers/productsController')
 
 module.exports = function(app) {
 	const productRoutes = express.Router();
+	apiRoutes.use('/tickets', ticketRoutes);
 
 	//==================
 	// TICKET ROUTES
 	//==================
-	apiRoutes.use('/tickets', productRoutes);
-	productRoutes.post('/create-new-ticket', requireAuth, productsController.createTicket);
-	app.use('/api', apiRoutes);
+	app.use('/tickets', apiRoutes);
 }

@@ -1,29 +1,20 @@
-const express = require('express'),
-	router = require('./router'),
-	cors = require('cors'),
-	bodyParser = require('body-parser'),
-	mongoose = require('mongoose')
+var express = require("express");
+var bodyParser = require("body-parser");
+var mongoose = require("mongoose");
+var path = require("path");
 
-const config = {
-	database: 'mongodb://localhost/27017/golfdb',
-	port: 8080
-}
+//controllers
+var productsController = require("./controllers/productsController");
 
-/* ====================================
-	Database setup
-==================================== */
-mongoose.connect(config.database)
-
-/* ====================================
-	Express server
-==================================== */
-// Import routes to be served
-let app = express()
-app.use(bodyParser.urlencoded({ extended: false }));
+//Express request pipeline
+var app = express();
+app.use(express.static(path.join(__dirname, "../app/dist")));
 app.use(bodyParser.json())
-app.use(cors())
-router(app)
+app.use("/api", productsController);
 
-// Start the server
-app.listen(config.port)
-console.log('Your server is running on port ' + config.port + '.')
+app.listen(7777, function () {
+    console.log("Started listening on port", 7777);
+});
+
+// Connect to mongodb database
+mongoose.connect("mongodb://localhost/golfdb");

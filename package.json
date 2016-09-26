@@ -10,10 +10,7 @@
     "version:patch": "npm version patch",
     "version:publish": "npm publish",
     "mongod": "mongo",
-    "start:db": "mongod",
-    "lint": "eslint server.js",
-    "start": "babel-node ./bin/www",
-    "start:server": "nodemon --exec \"npm run lint && npm start\""
+    "start:db": "mongod"
   },
   "repository": {
     "type": "git",
@@ -68,6 +65,7 @@
     "require-dir": "^0.3.0",
     "sass-loader": "^4.0.2",
     "style-loader": "^0.13.1",
+    "underscore": "^1.8.3",
     "webpack": "^1.13.2",
     "webpack-browser-plugin": "^1.0.12",
     "webpack-dev-server": "^1.15.1",

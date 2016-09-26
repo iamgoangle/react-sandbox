@@ -1,33 +1,26 @@
-const products = require('../models/products')
+var mongoose = require("mongoose")
+var Product = require("../models/products")
+var _ = require("underscore")
 
-exports.createTicket = function(req, res, next) {
-  const name = req.body.name;
-  const email = req.body.email;
-  const message = req.body.message;
+var router = require("express").Router()
+// router.route("/Products/:id?")
+router.route("/Products")
+.get(getProducts)
+// .post(addProduct)
+// .delete(deleteProduct)
 
-  if (!name) {
-    return res.status(422).send({ error: 'You must enter a name!'});
-  }
-
-  if (!email) {
-    return res.status(422).send({ error: 'You must enter your email!'});
-  }
-
-  if (!message) {
-    return res.status(422).send({ error: 'You must enter a detailed description of what you need!'});
-  }
-
-  let ticket = new Tickets({
-    name: name,
-    email: email,
-    status: "Open",
-    message: message
-  });
-
-  ticket.save(function(err, user) {
-    if(err) {return next(err);}
-
-    res.status(201).json({ message: "Thanks! Your request was submitted successfuly!" });
-    next();
-  })
+function getProducts(req, res) {
+	// try{
+		Product.find({}).exec(function(err, products){
+			if (err) {
+				console.log(err);
+			} else {
+				res.json(products);
+			}
+		})
+	// } catch(err) {
+	// 	console.log(err);
+	// }
 }
+
+module.exports = router;
