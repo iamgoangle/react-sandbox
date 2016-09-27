@@ -1,25 +1,22 @@
 # Yellow Duck dot I/O
-I am thrilled with React JS world. This repository is created to learn all about React JS world.
+I am thrilled to listen developer, blogger and open source community that talking about new library for view. ReactJS claim itself it is component based development. It is just about library, not a framework so the developer probably need to learn with higher learning curve at once to understand fundamental of javascript, design pattern and plug a module by your own.
+
+This repository was created for learning all about ReactJS and plug the related modules that fulfill web layer ui-controller-model.
 
 ![Golf company logo](https://raw.githubusercontent.com/iamgoangle/york-town-react-js/master/assets/images/iamgoangle-logo.png)
 
 # Author
 Mr. Teerapong Singthong (GOLF)
 
-# Leaning objective
-1. To familiar JavaScript coding with ES5, ES6
-2. To understand the differences between mutable and immutable (Pure function)
-3. React life-cycle, and using Redux to manage state and handling state
-4. Learning noSQL
-5. ...
-
 # Installation
 1. Fork
 2. open cmd.exe
 3. run this command `npm install`
 4. once it completely installation, ensure your firewall port:3030 is already allowed
-5. `npm run build:dev`
-6. waiting 3-5 second, the browser will automatically launch
+5. to starting a dev server `npm run start:dev`
+6. to starting a database server `npm run start:db`
+7. to starting a api server `npm run start:server`
+8. waiting 3-5 second, the browser will automatically launch
 
 # Stack Lists
 1. React
