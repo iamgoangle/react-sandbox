@@ -12,25 +12,47 @@ Mr. Teerapong Singthong (GOLF)
 1. Fork
 2. open cmd.exe
 3. run this command `npm install`
-4. once it completely installation, ensure your firewall port:3030 is already allowed
-5. to starting a dev server `npm run start:dev`
-6. to starting a database server `npm run start:db`
-7. to starting a api server `npm run start:server`
-8. waiting 3-5 second, the browser will automatically launch
+
+# Running the project
+1. Open shell or command line program
+2. `npm run start:dev`, waiting 3-5 second, the browser will automatically launch
+3. `npm run start:db`
+4. `npm run start:server`
 
 # Stack Lists
-1. React
-2. Node.js
-3. Webpack
-4. Gulp
-5. Babel
-6. Sass Preprocessor
-7. ES5, ES6
-8. React-Bootstrap 3
-9. Material UI [Material Icon set](https://design.google.com/icons/)
-10. Redux, Middleware, Thunk
-11. Axios, isomorphic-fetch
-12. Mongoose, MongoDB
+### View library
+- ReactJS
+
+### Redux
+- Redux, Middleware, Thunk
+
+### JavaScript server-side runtime
+- Node.js
+
+### JavaScript module bundle
+- Webpack
+
+### JavaScript task runner
+- Gulp
+
+### ES script
+- ES5 / ES6 / Babel
+
+### UI framework
+- Material UI [Material Icon set](https://design.google.com/icons/)
+- Bootstrap 3
+
+### CSS
+- SASS (.scss)
+
+### Server
+- Express
+
+### noSQL Database
+- Mongoose, MongoDB
+
+### XHR Library
+- Axios, isomorphic-fetch
 
 # Webpack plugins
 1. html-webpack-plugin [Example 1](http://javascriptplayground.com/blog/2016/07/webpack-html-plugin/)
