@@ -6,12 +6,17 @@ import express from 'express'
 import ProductServices from '../services/ProductServices'
 
 // Instance object
-const _ProductServices = new ProductServices()
+let _ProductServices = new ProductServices()
 
 const ProductRouter = express.Router()
 
 ProductRouter.get('/', function (req, res, next) {
 	_ProductServices.getAllProducts(req, res)
+})
+
+// To create new entity
+ProductRouter.put('/addProduct', function (req, res, next) {
+	// _ProductServices.addProduct()
 })
 
 module.exports = ProductRouter

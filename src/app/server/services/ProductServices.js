@@ -18,6 +18,14 @@ class ProductServices {
 			console.error(err)
 		}
 	}
+
+	addProduct (req, res) {
+		try {
+			
+		} catch (err) {
+			console.error(err)
+		}
+	}
 }
 
 export default ProductServices
