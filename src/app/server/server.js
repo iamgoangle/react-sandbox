@@ -26,4 +26,5 @@ app.listen(config.SERVER.PORT, function () {
 /******************************
 	Connect to mongodb database
 *******************************/
+mongoose.Promise = global.Promise
 mongoose.connect(config.DATABASE.HOST)
