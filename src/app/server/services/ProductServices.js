@@ -5,10 +5,10 @@ class ProductServices {
 
 	}
 
-	getAllProducts (req, res) {
+	getAllTodos (req, res) {
 		res.header("Access-Control-Allow-Origin", "*")
   		res.header("Access-Control-Allow-Headers", "X-Requested-With")
-		
+
 		try {
 			Product.find({}).exec(function(err, products){
 				if (err) {
