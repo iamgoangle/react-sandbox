@@ -1,9 +1,19 @@
 import axios from 'axios'
 import { config } from '../config/server.conf'
 
+/*
+	-> server/controllers/TodoController
+	-> server/services/TodoServices
+	-> server/models/todos
+	-> reducers/todoReducer
+*/
+
 const HOST = `http://${config.SERVER.HOST}:${config.SERVER.PORT}`
 
-/* TODO: Action type should be move to actionType.js */
+// defined endpoint
+const PRODUCT_ENDPOINT = `${config.API.products}`
+const TODO_ENDPOINT = `${config.API.todos}`
+
 const _actionType = {
 	getAllTodo: 'GET_ALLTODO',
 	addSingleTodo: 'ADD_SINGLETODO',
@@ -37,7 +47,7 @@ export const removeTodo = (index) => {
 
 export const fetchTodo = () => {
 	return function (dispatch){
-		axios.get(`${HOST}/api/todos/getAllTodos`)
+		axios.get(`${HOST}${TODO_ENDPOINT}/getAllTodos`)
 		.then(response => {
 			dispatch ({
 				type: _actionType.fetchTodo,
