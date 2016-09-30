@@ -1,10 +1,7 @@
 import axios from 'axios'
+import { config } from '../config/server.conf'
 
-/* TODO: Move endpoint server to centralize folder */
-const _configEndPoint = {
-	HOST: 'http://localhost:3030/dist/api',
-	APIKEY: ''
-}
+const HOST = `http://${config.SERVER.HOST}:${config.SERVER.PORT}`
 
 /* TODO: Action type should be move to actionType.js */
 const _actionType = {
@@ -40,13 +37,13 @@ export const removeTodo = (index) => {
 
 export const fetchTodo = () => {
 	return function (dispatch){
-		axios.get(`${_configEndPoint.HOST}/todos.json`)
+		axios.get(`${HOST}/api/todos/getAllTodos`)
 		.then(response => {
 			dispatch ({
 				type: _actionType.fetchTodo,
 				payload: response.data
 			})
-			console.log(json.stringify(response.data))
+			// console.log(json.stringify(response.data))
 		})
 		.catch( (error) => {
 			console.log(error)
