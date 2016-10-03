@@ -49,7 +49,7 @@ class Header extends Component {
 									<NavLink to="/easy-redux">Easy Redux</NavLink>
 								</li>
 								<li>
-									<a className="page-scroll" href="#blog">Blog</a>
+									<NavLink to="/react-life-cycle">React Life Cycle</NavLink>
 								</li>
 								<li>
 									<a className="page-scroll" href="#contact">Contact Us</a>
