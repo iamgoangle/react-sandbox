@@ -9,6 +9,7 @@ import Home from './containers/pages/Home'
 import Todo from './containers/pages/Todo'
 import Product from './containers/pages/Product'
 import EasyRedux from './containers/pages/EasyRedux'
+import ReactLifeCycle from './containers/pages/ReactLifeCycle'
 
 export default (
 	<Router history={browserHistory}>
@@ -25,7 +26,10 @@ export default (
 				title="Product | Add product to cart" />
 			<Route path='easy-redux'
 				component={EasyRedux}
-				title="Easy Redux | To learning easy redux from simple file" />
+				title="Easy Redux | To learn easy redux from simple file" />
+			<Route path='react-life-cycle'
+				component={ReactLifeCycle}
+				title="React Life Cycle | To learn about react life cycle" />
 		</Route>
 	</Router>
 )
