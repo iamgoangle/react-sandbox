@@ -20,39 +20,20 @@ Mr. Teerapong Singthong (GOLF)
 4. `npm run start:server`
 
 # Stack Lists
-### View library
-- ReactJS
-
-### Redux
-- Redux, Middleware, Thunk
-
-### JavaScript server-side runtime
-- Node.js
-
-### JavaScript module bundle
-- Webpack
-
-### JavaScript task runner
-- Gulp
-
-### ES script
-- ES5 / ES6 / Babel
-
-### UI framework
-- Material UI [Material Icon set](https://design.google.com/icons/)
-- Bootstrap 3
-
-### CSS
-- SASS (.scss)
-
-### Server
-- Express
-
-### noSQL Database
-- Mongoose, MongoDB
-
-### XHR Library
-- Axios, isomorphic-fetch
+1. ReactJS
+2. [JSX](https://facebook.github.io/react/docs/jsx-in-depth.html)
+3. React-DOM / React-Router
+3. Middleware / Redux / Redux-Thunk
+4. Axios / isomorphic-fetch
+5. Bootstrap 3 / Font-Awesome / Material-UI
+6. Node.JS
+7. MongoDB / Mongoose
+8. Webpack / Sass loader / babel-loader ...
+9. Babel
+10. ES5 / ES6
+11. Gulp
+12. Express
+13. Sass (.scss)
 
 # Webpack plugins
 1. html-webpack-plugin [Example 1](http://javascriptplayground.com/blog/2016/07/webpack-html-plugin/)
