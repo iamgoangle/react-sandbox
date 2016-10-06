@@ -58,7 +58,7 @@ Mr. Teerapong Singthong (GOLF)
 12. Redux Thunk [https://github.com/gaearon/redux-thunk](https://github.com/gaearon/redux-thunk)
 13. Remove state array [http://stackoverflow.com/questions/34582678/is-this-the-correct-way-to-delete-an-item-using-redux](http://stackoverflow.com/questions/34582678/is-this-the-correct-way-to-delete-an-item-using-redux) [https://egghead.io/lessons/javascript-redux-avoiding-array-mutations-with-concat-slice-and-spread](https://egghead.io/lessons/javascript-redux-avoiding-array-mutations-with-concat-slice-and-spread) [http://stackoverflow.com/questions/34003553/redux-what-is-the-correct-way-to-filter-a-data-array-in-reducer](http://stackoverflow.com/questions/34003553/redux-what-is-the-correct-way-to-filter-a-data-array-in-reducer)
 14. Understand middleware [https://medium.com/@meagle/understanding-87566abcfb7a#.8sqirw5rg](https://medium.com/@meagle/understanding-87566abcfb7a#.8sqirw5rg)
-15. Good content to manage state connect to api redux axios [http://www.davidmeents.com/manage-state-connect-to-api-redux-axios/](http://www.davidmeents.com/manage-state-connect-to-api-redux-axios/w)
+15. Good content to manage state connect to api redux axios [http://www.davidmeents.com/manage-state-connect-to-api-redux-axios/](http://www.davidmeents.com/manage-state-connect-to-api-redux-axios/)
 16. Functional Programming [https://medium.com/funk-tional/hello-functional-programming-eacb0091a53c#.4zhercqrm](https://medium.com/funk-tional/hello-functional-programming-eacb0091a53c#.4zhercqrm)
 
 # To remind myself
