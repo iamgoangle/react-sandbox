@@ -22,6 +22,8 @@ from '../../actions/todoAction'
 	Any time it updates, mapStateToProps will be called.
 	Its result must be a plain object*,
 	and it will be merged into the component’s props
+
+	state in this case is store state, not a component state
 */
 const mapStateToProps = (state) => {
 	return {
@@ -30,19 +32,22 @@ const mapStateToProps = (state) => {
 }
 
 /*
-	object is passed, each function inside it will be assumed to be a Redux action creator.
+	object is passed, each function inside it will be
+	assumed to be a Redux action creator.
+
 	An object with the same function names,
-	but with every action creator wrapped into a dispatch call so they may be invoked directly,
+	but with every action creator wrapped into a
+	dispatch call so they may be invoked directly,
 	will be merged into the component’s props
 */
 const mapDispatchToProps = (dispatch) => {
 	return {
-		onPageLoad: () => {
-			dispatch(getAllTodo())
-		},
-		onTodoClick: () => {
-			dispatch(getAllTodo())
-		},
+		// onPageLoad: () => {
+		// 	dispatch(getAllTodo())
+		// },
+		// onTodoClick: () => {
+		// 	dispatch(getAllTodo())
+		// },
 		onAddSingleTodo: (newTodo) => {
 			dispatch(addSingleTodo(newTodo))
 		},
@@ -62,13 +67,9 @@ class Todo extends Component {
 		this.title = "Example todo"
 	}
 
-	/*
-		we can ignore these previate function, since we can send this.props.xxx
-		to presentation component directly instead
-	*/
-	onRefreshClick = () => {
-		this.props.onPageLoad()
-	}
+	// onRefreshClick = () => {
+	// 	this.props.onPageLoad()
+	// }
 
 	onAddSingleTodo = (newTodo) => {
 		this.props.onAddSingleTodo(newTodo)
@@ -82,16 +83,15 @@ class Todo extends Component {
 		return (
 			<div>
 				<Header
-					title={this.title}
-					onRefreshClick={this.onRefreshClick}
-					onAddSingleTodo={this.onAddSingleTodo}
-					onFetchDataJSON={this.onFetchDataJSON}
-					todos={this.props.todos} />
+					title = {this.title}
+					onRefreshClick = {this.onRefreshClick}
+					onAddSingleTodo = {this.onAddSingleTodo}
+					onFetchDataJSON = {this.onFetchDataJSON} />
 
 				<PageData
-					todos={this.props.todos}
-					onPageLoad={this.props.onPageLoad}
-					handleOnRemove={this.props.handleOnRemove} />
+					todos = {this.props.todos}
+					onFetchDataJSON = {this.onFetchDataJSON}
+					handleOnRemove = {this.props.handleOnRemove} />
 			</div>
 		)
 	}

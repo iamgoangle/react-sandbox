@@ -75,7 +75,7 @@ class PageData extends Component {
 	// get property type from container components
 	static propTypes: {
 		todos: PropTypes.array.isRequired,
-		onPageLoad: PropTypes.func.isRequired,
+		onFetchDataJSON: PropTypes.func.isRequired,
         handleOnRemove: PropsTypes.func.isRequired
 	}
 
@@ -93,18 +93,13 @@ class PageData extends Component {
 
     handleOnRemove = () => {
         const index = this.state.removeIndex
-        // const _tempTodos = this.props.todos
-        // _tempTodos.splice(index, 1)
-        //
-        // console.log(_tempTodos)
-
         if(this.props.handleOnRemove(index)) {
             this.handleClose()
         }
     }
 
     componentWillMount () {
-        this.props.onPageLoad()
+		this.props.onFetchDataJSON()
     }
 
     handleOpen = (index) => {
