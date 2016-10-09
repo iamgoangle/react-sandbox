@@ -10,64 +10,98 @@ const customContentStyle = {
 }
 
 class AddSingleTodoModal extends Component {
-	constructor () {
-		super()
-		this.state = {
-			open: false
-		}
-	}
-
 	static propTypes: {
-		openSingleTodoModal: PropTypes.bool.isRequired
+		handleOpenModal: PropTypes.func.isRequired,
+		openModal: PropsType.bool.isRequired
 	}
 
-	handleOpen = () => {
-		this.setState({open: true});
+	constructor (props) {
+		super(props)
+
+		this.state = {}
+		this.state.workerStatus = [{
+			id: 1,
+			status: 'Employed'
+		}, {
+			id: 2,
+			status: 'Unemployed'
+		}]
 	}
 
 	handleClose = () => {
-		this.setState({open: false});
+		this.props.handleOpenModal(false)
 	}
 
 	render () {
 		const actions = [
-				<FlatButton
-					label = "Cancel"
-					primary = {true}
-					onTouchTap = {this.handleClose}
-				/>,
-				<FlatButton
-					label = "Submit"
-					primary = {true}
-					disabled = {true}
-					onTouchTap = {this.handleClose}
-				/>
-			]
+			<FlatButton
+				label = "Cancel"
+				primary = {true}
+				onTouchTap = {this.handleClose}
+			/>,
+			<FlatButton
+				label = "Submit"
+				primary = {true}
+				disabled = {true}
+				onTouchTap = {this.handleClose}
+			/>
+		]
+
 		return (
 			<div>
 				<Dialog
 					title = "Add new todo"
 					actions = {actions}
 					modal = {true}
-					open = {this.props.openSingleTodoModal}
+					open = {this.props.openModal}
 					contentStyle = {customContentStyle}>
-					<div className="rows">
+
+					<div className="row">
 						<div className="col-md-12">
 							<div className="col-md-8">
-								<div>
-									<div className="col-md-5">
-										<span>Name</span>
+								<div className="row field">
+									<div className="col-md-3">
+										<span>
+											Name
+										</span>
 									</div>
 									<div className="col-md-7">
-										<input type="text" name="name" placeholder="entered you name" />
+										<input type="text"
+											id="worker-name"
+											name="name"
+											placeholder="Enter employee name" />
+									</div>
+								</div>
+								<div className="row field">
+									<div className="col-md-3">
+										<span>
+											Status
+										</span>
+									</div>
+									<div className="col-md-7">
+										<select name="status" id="worker-status">
+											{
+												this.state.workerStatus.map( (status) =>
+													(
+														<option key={status.id}
+															value={status.status}>
+															{status.status}
+														</option>
+													)
+												)
+											}
+										</select>
 									</div>
 								</div>
 							</div>
 							<div className="col-md-4">
-
+								<img src="dist/assets/images/users/blank.png"
+									alt="blank user"
+									className="img-thumbnail"/>
 							</div>
 						</div>
 					</div>
+
 				</Dialog>
 			</div>
 		)

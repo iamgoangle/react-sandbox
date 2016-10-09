@@ -34,7 +34,7 @@ class Header extends Component {
 		// this.handleAddSingle = this.handleAddSingle.bind(this)
 
 		this.state = {
-			openSingleTodoModal: false
+			openModal: false
 		}
 	}
 
@@ -51,8 +51,8 @@ class Header extends Component {
 	// 	this.props.onAddSingleTodo(_newTodo)
 	// }
 
-	handleAddSingle = () => {
-		this.setState({openSingleTodoModal: true})
+	handleOpenModal = (status) => {
+		this.setState({openModal: status})
 	}
 
 	handlePullFromJSON = () => {
@@ -64,7 +64,8 @@ class Header extends Component {
 			<MuiThemeProvider>
 				<div>
 					<AddSingleTodoModal
-						openSingleTodoModal={this.state.openSingleTodoModal}>
+						handleOpenModal={this.handleOpenModal}
+						openModal={this.state.openModal}>
 					</AddSingleTodoModal>
 
 					<AppBar
@@ -86,7 +87,7 @@ class Header extends Component {
 
 								<MenuItem
 									primaryText="Add single record"
-									onClick={() => this.handleAddSingle()} />
+									onClick={() => this.handleOpenModal(true)} />
 								<MenuItem
 									primaryText="Pull data from JSON"
 									onClick={() => this.handlePullFromJSON()} />

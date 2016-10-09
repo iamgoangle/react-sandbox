@@ -17,6 +17,8 @@ import {
 }
 from '../../actions/todoAction'
 
+import '../../components/todo/todo.scss'
+
 /*
 	component will subscribe to Redux store updates.
 	Any time it updates, mapStateToProps will be called.

@@ -1,0 +1,33 @@
+//TODO: Refactor code !!!
+$entry-field-border-radius: 5px;
+$entry-field-width: 186px;
+$entry-field-height: 35px;
+
+@mixin border-radius ($radius) {
+	-webkit-border-radius: $radius;
+	border-radius: $radius;
+}
+
+input, select {
+	height: $entry-field-height;
+	width: $entry-field-width;
+	text-indent: 5px;
+}
+
+div {
+	.field {
+		margin-bottom: 5px;
+	}
+}
+
+// input box to enter the employee name
+#worker-name {
+	border: 1px solid #dbdbdb;
+
+	@include border-radius($entry-field-border-radius)
+}
+
+// select box to choose a worker status
+#worker-status {
+	@include border-radius($entry-field-border-radius)
+}
