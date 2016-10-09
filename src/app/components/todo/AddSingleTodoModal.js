@@ -15,6 +15,10 @@ class AddSingleTodoModal extends Component {
 		openModal: PropsType.bool.isRequired
 	}
 
+	static contextTypes = {
+		handleAddNewTodo: PropTypes.func.isRequired
+	}
+
 	constructor (props) {
 		super(props)
 
@@ -32,18 +36,22 @@ class AddSingleTodoModal extends Component {
 		this.props.handleOpenModal(false)
 	}
 
+	handleSubmit = () => {
+		this.context.handleAddNewTodo()
+	}
+
 	render () {
 		const actions = [
 			<FlatButton
 				label = "Cancel"
-				primary = {true}
+				primary = {false}
 				onTouchTap = {this.handleClose}
 			/>,
 			<FlatButton
 				label = "Submit"
 				primary = {true}
-				disabled = {true}
-				onTouchTap = {this.handleClose}
+				disabled = {false}
+				onTouchTap = {this.handleSubmit}
 			/>
 		]
 

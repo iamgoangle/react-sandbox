@@ -69,6 +69,28 @@ class Todo extends Component {
 		this.title = "Example todo"
 	}
 
+	// Child contexts allow an element to specify a context that
+	// applies to all of its children and grandchildren.
+
+	// This is done through the childContextTypes
+	// and getChildContext properties.
+
+	// https://www.tildedave.com/2014/11/15/introduction-to-contexts-in-react-js.html
+	static childContextTypes = {
+		handleAddNewTodo: PropTypes.func.isRequired
+	}
+
+	getChildContext () {
+		return {
+			handleAddNewTodo: this.handleAddNewTodo
+		}
+	}
+
+	handleAddNewTodo = () => {
+		// TODO: dispatch to action for save new todo
+		console.log('test')
+	}
+
 	// onRefreshClick = () => {
 	// 	this.props.onPageLoad()
 	// }
