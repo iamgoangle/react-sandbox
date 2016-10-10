@@ -3,7 +3,7 @@ I am thrilled to listen developer, blogger and open source community that talkin
 
 This repository was created for learning all about ReactJS and plug the related modules that fulfill web layer ui-controller-model.
 
-![Golf company logo](https://raw.githubusercontent.com/iamgoangle/york-town-react-js/master/assets/images/iamgoangle-logo.png)
+![Golf company logo](https://raw.githubusercontent.com/iamgoangle/react-sandbox/master/iamgoangle-logo.png)
 
 # Author
 Mr. Teerapong Singthong (GOLF)
